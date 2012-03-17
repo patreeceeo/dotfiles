@@ -4,3 +4,30 @@
 [submodule ".vim/bundle/jshint.vim"]
 	path = .vim/bundle/jshint.vim
 	url = http://github.com/vim-scripts/jshint.vim.git
+[submodule ".vim/bundle/vim-xml-util"]
+	path = .vim/bundle/vim-xml-util
+	url = http://github.com/jaytaylor/vim-xml-util.git
+[submodule ".vim/bundle/vim-colors-solarized"]
+	path = .vim/bundle/vim-colors-solarized
+	url = http://github.com/altercation/vim-colors-solarized.git
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/vim-haml"]
+	path = .vim/bundle/vim-haml
+	url = http://github.com/tpope/vim-haml.git
+[submodule ".vim/bundle/vim-javascript"]
+	path = .vim/bundle/vim-javascript
+	url = http://github.com/pangloss/vim-javascript.git
+[submodule ".vim/bundle/vim-quiver"]
+	path = .vim/bundle/vim-quiver
+	url = http://github.com/patrickc56/vim-quiver.git
+[submodule ".vim/bundle/vim-ruby"]
+	path = .vim/bundle/vim-ruby
+	url = http://github.com/vim-ruby/vim-ruby.git
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = http://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/vim-commentary"]
+	path = .vim/bundle/vim-commentary
+	url = http://github.com/tpope/vim-commentary.git
