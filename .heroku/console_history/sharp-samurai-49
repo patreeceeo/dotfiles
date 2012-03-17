@@ -1,0 +1,10 @@
+User.create(:name => "Example User", :email => user@example.com", :password => "foobar", password_confirmation => "foobar")
+User.create(:name => "Example User", :email => "user@example.com", :password => "foobar", password_confirmation => "foobar")
+quit
+exit
+User.create(:name => "Example User", :email => "user@example.com", :password => "foobar", password_confirmation => "foobar")
+quit
+exit
+User.create(:name => "Example User", :email => "user@example.com", :password => "foobar", password_confirmation => "foobar")
+User.create(:name => "Example User", :email => "user@example.com", :password => "foobar", :password_confirmation => "foobar")
+exit
