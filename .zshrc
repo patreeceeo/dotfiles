@@ -32,12 +32,12 @@ ZSH_THEME="random"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git git-flow github bundler command-not-found compleat gem heroku lol python ruby rvm vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Users/jason/.rvm/gems/ruby-1.8.7-p330@wxWindows/bin:/Users/jason/.rvm/gems/ruby-1.8.7-p330@global/bin:/Users/jason/.rvm/rubies/ruby-1.8.7-p330/bin:/Users/jason/.rvm/bin:/Users/jason/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=$HOME/.rvm/gems/ruby-1.8.7-p330@wxWindows/bin:$HOME/.rvm/gems/ruby-1.8.7-p330@global/bin:$HOME/.rvm/rubies/ruby-1.8.7-p330/bin:$HOME/.rvm/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 pyproj() {
     echo "Lets hack on some $1!"
@@ -53,4 +53,7 @@ alias ppeq="pyproj eventq.net"
 PYTHONSTARTUP=~/.pythonrc.py
 export PYTHONSTARTUP
 
-alias vim="mvim -v"
+# begin code thats only for my macbook
+if [[ $(hostname) == "steve" ]] {
+  alias vim="mvim -v"
+}
