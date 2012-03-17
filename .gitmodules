@@ -1,0 +1,6 @@
+[submodule ".vim/bundle/Command-T"]
+	path = .vim/bundle/Command-T
+	url = http://github.com/vim-scripts/Command-T.git
+[submodule ".vim/bundle/jshint.vim"]
+	path = .vim/bundle/jshint.vim
+	url = http://github.com/vim-scripts/jshint.vim.git
