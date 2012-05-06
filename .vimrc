@@ -38,8 +38,8 @@ cmap W! w !sudo tee % >/dev/null
 " FileType specific changes
 " =========================
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2,*.erb setlocal ft=html
-
-
+autocmd BufNewFile,BufRead *Makefile,*.mk setlocal noexpandtab
+autocmd BufNewFile,BufRead *.txt setlocal spell spelling=en_us
 " Mappings
 " ========
 
