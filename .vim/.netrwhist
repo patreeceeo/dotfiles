@@ -1,6 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/jason/sinatra_projects/helcross-fbapp/views/stylesheets/lib'
-let g:netrw_dirhist_2='/Users/jason/rails_projects/helcross.com/test/unit'
-let g:netrw_dirhist_3='/Users/jason/rails_projects/helcross.com/app/assets/stylesheets'
-let g:netrw_dirhist_4='/Users/jason/sinatra_projects/helcross-fbapp/public/javascripts'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/patrick/codez/eventray_env/eventray/eventray/stock_designer/schemas'
+let g:netrw_dirhist_2='/home/patrick/codez/eventray_env/eventray/.git'

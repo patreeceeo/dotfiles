@@ -33,7 +33,7 @@ alias vim=vimx
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow github bundler compleat gem heroku lol python ruby rvm vi-mode)
+plugins=(git git-flow github bundler compleat gem heroku lol python ruby rvm vi-mode history-substring-search zsh-syntax-highlighting virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,8 +53,47 @@ export PATH=$HOME/.rvm/gems/ruby-1.8.7-p330@wxWindows/bin:$HOME/.rvm/gems/ruby-1
 
 PYTHONSTARTUP=~/.pythonrc.py
 export PYTHONSTARTUP
+source /usr/bin/virtualenvwrapper.sh
+export WORKON_HOME=~/codez
 
-# begin code thats only for my macbook
-# if [[ $(hostname) == "steve" ]] {
-#   alias vim="mvim -v"
-# }
+echo "0.) None"
+echo "1.) EventRay"
+echo "2.) Zen Graphs"
+echo "3.) Blog"
+echo -n "Which project? (1)"
+read n;
+if [[ $n != "0" ]]; then
+    if [[ $n == "3" ]]; then
+        proj_name=pzatrick_dot_com
+        workon hiero_env
+    elif [[ $n == "2" ]]; then
+        proj_name=zen-graphs-d3    
+    else
+        proj_name=eventray
+        workon eventray_env
+    fi
+    old_proj_name=$(cat $HOME/.proj_name)
+    echo $proj_name > $HOME/.proj_name
+
+
+    server=$(lsof -i :6543)
+    if [[ $server == "" || $proj_name != $old_proj_name ]]; then 
+        echo -n "Start Server? [Y/n]: "; read yn; 
+        if [[ $yn != "n" && $yn != "N" ]]; then 
+            if [[ $server != "" ]]; then
+                kill -9 $(lsof -i :6543 -t)
+            fi
+            pserve $VIRTUAL_ENV/$proj_name/development.ini --reload; 
+        fi
+    else
+        echo $server
+        echo -n "Start Vim? [Y/n]: "; read yn;
+        if [[ $yn != "n" && $yn != "N" ]]; then
+            cd $VIRTUAL_ENV/$proj_name/$proj_name
+            vim 
+        fi
+    fi
+
+    alias cdve='cd $VIRTUAL_ENV/$proj_name'
+fi
+

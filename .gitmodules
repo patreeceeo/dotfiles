@@ -19,9 +19,6 @@
 [submodule ".vim/bundle/vim-javascript"]
 	path = .vim/bundle/vim-javascript
 	url = http://github.com/pangloss/vim-javascript.git
-[submodule ".vim/bundle/vim-quiver"]
-	path = .vim/bundle/vim-quiver
-	url = http://github.com/patrickc56/vim-quiver.git
 [submodule ".vim/bundle/vim-ruby"]
 	path = .vim/bundle/vim-ruby
 	url = http://github.com/vim-ruby/vim-ruby.git
@@ -31,3 +28,9 @@
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = http://github.com/tpope/vim-commentary.git
+[submodule ".vim/bundle/xmledit"]
+	path = .vim/bundle/xmledit
+	url = https://github.com/sukima/xmledit.git
+[submodule ".vim/bundle/xml.vim"]
+	path = .vim/bundle/xml.vim
+	url = https://github.com/othree/xml.vim.git
