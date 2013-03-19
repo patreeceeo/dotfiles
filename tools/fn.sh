@@ -11,10 +11,10 @@ dotfiles_pull () {
 	ln -siv ~/dotfiles/$1 ~/$1
 }
 
-dotfiles_install () {
-  for f in ~/dotfiles/\.* {
-    if [[ $f != '.git' && $f != '.gitignore' && $f != 'gitmodules' ]]; then
-      dotfiles_pull $f
-    fi
-  }
-}
+#dotfiles_install () {
+#  for f in ~/dotfiles/\.* {
+#    if [[ $f != '.git' && $f != '.gitignore' && $f != 'gitmodules' ]]; then
+#      dotfiles_pull $f
+#    fi
+#  }
+#}

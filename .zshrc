@@ -10,7 +10,8 @@ ZSH_THEME="wedisagree"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim=vimx
+#alias vim=vimx
+alias vim='mvim -v'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -33,12 +34,13 @@ alias vim=vimx
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow github bundler compleat gem heroku lol python ruby rvm vi-mode history-substring-search zsh-syntax-highlighting virtualenvwrapper)
+# plugins=(git git-flow github compleat python vi-mode history-substring-search zsh-syntax-highlighting virtualenvwrapper)
+plugins=(history-substring-search zsh-syntax-highlighting virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$HOME/.rvm/gems/ruby-1.8.7-p330@wxWindows/bin:$HOME/.rvm/gems/ruby-1.8.7-p330@global/bin:$HOME/.rvm/rubies/ruby-1.8.7-p330/bin:$HOME/.rvm/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # pyproj() {
 #     echo "Lets hack on some $1!"
@@ -49,7 +51,7 @@ export PATH=$HOME/.rvm/gems/ruby-1.8.7-p330@wxWindows/bin:$HOME/.rvm/gems/ruby-1
 # alias ppcs="pyproj couchstartup"
 # alias ppeq="pyproj eventq.net"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # Load RVM into a shell session *as a function*
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # Load RVM into a shell session *as a function*
 
 PYTHONSTARTUP=~/.pythonrc.py
 export PYTHONSTARTUP

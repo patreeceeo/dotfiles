@@ -1,4 +1,4 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/patrick/codez/eventray_env/eventray/eventray/stock_designer/schemas'
-let g:netrw_dirhist_2='/home/patrick/codez/eventray_env/eventray/.git'
+let g:netrw_dirhist_1='/Users/patrickcanfield/codez/pzatrick_com_env/pzatrick_com/pzatrick_com/models'
+let g:netrw_dirhist_2='/Users/patrickcanfield/codez/eventray_env/eventray/eventray/core/models'
