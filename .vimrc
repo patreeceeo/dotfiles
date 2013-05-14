@@ -5,7 +5,8 @@ if has("gui_macvim")
     let macvim_hig_shift_movement = 1
     " macmenu &File.New\ Tab key=<nop>
     map <D-t> :CommandT<CR>
-    set guioptions=egmrt
+    " set guioptions=egmrt
+    set guioptions=egmt
 endif
 
 set bg=dark
@@ -16,6 +17,11 @@ set sts=4
 set sw=4
 set expandtab
 set cursorline
+set cursorcolumn
+:hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+
 syntax on
 filetype on
 filetype plugin indent on
