@@ -15,6 +15,10 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+if [ -d "/usr/local/git/bin" ] ; then
+    PATH="/usr/local/git/bin:$PATH"
+fi
+
 #put /usr/local/lib in your LD_LIBRARY_PATH
 LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 

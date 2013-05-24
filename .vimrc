@@ -5,22 +5,17 @@ if has("gui_macvim")
     let macvim_hig_shift_movement = 1
     " macmenu &File.New\ Tab key=<nop>
     map <D-t> :CommandT<CR>
-    " set guioptions=egmrt
     set guioptions=egmt
+    set guifont=Monaco:h14
 endif
 
 set bg=dark
-colorscheme slate
+colorscheme solarized
 
 set ts=4
 set sts=4
 set sw=4
 set expandtab
-set cursorline
-set cursorcolumn
-:hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 syntax on
 filetype on
@@ -40,6 +35,7 @@ set scrolloff=4
 set incsearch
 set wrap
 set ruler
+set nowrapscan
 " Use W! to save a file as superuser
 cmap W! w !sudo tee % >/dev/null
 
@@ -57,7 +53,7 @@ let g:SuperTabDefaultCompletionType = "context"
 " Command-T
 nnoremap <silent> <leader>t :CommandT<CR>
 nnoremap <silent> <leader>b :CommandTBuffer<CR>
-set wildignore+=*.pyc,.git
+set wildignore+=*.pyc,.git,target/*,tmp/*
 let g:CommandTMatchWindowReverse=1
 let g:CommandTCancelMap='<Esc>'
 
@@ -88,6 +84,21 @@ vnoremap <S-Tab>     <
 set foldmethod=indent
 set foldlevel=99
 
-map <leader>j :RopeGotoDefinition<CR>
-map <leader>r :RopeRename<CR>
+" au WinLeave * set nocursorline nocursorcolumn
+:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+source ~/.vimrc_local
