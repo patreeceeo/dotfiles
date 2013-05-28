@@ -4,7 +4,8 @@ alias vim='nohup mvim'
 alias ga='git add .'
 alias gc='git commit'
 alias gco='git checkout'
-alias gp='git push'
+alias gps='git push'
+alias gpl='git pull'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # Load RVM into a shell session *as a function*
 
