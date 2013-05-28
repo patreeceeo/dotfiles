@@ -1,6 +1,11 @@
 alias tvim='mvim -v'
 alias vim='nohup mvim'
 
+alias ga='git add .'
+alias gc='git commit'
+alias gco='git checkout'
+alias gp='git push'
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # Load RVM into a shell session *as a function*
 
 # Source Prezto.
