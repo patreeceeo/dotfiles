@@ -85,7 +85,7 @@ set foldmethod=indent
 set foldlevel=99
 
 " au WinLeave * set nocursorline nocursorcolumn
-:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+:nnoremap <Leader>l :set cursorline! cursorcolumn!<CR>
 
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -100,5 +100,8 @@ nnoremap <C-n> :call NumberToggle()<cr>
 :au FocusGained * :set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
+
+vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
+map <leader>c :CoffeeCompile<CR>
 
 source ~/.vimrc_local
