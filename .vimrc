@@ -9,12 +9,13 @@ if has("gui_macvim")
     set guifont=Monaco:h14
 endif
 
+set spell
 set bg=dark
 colorscheme solarized
 
-set ts=4
-set sts=4
-set sw=4
+set ts=2
+set sts=2
+set sw=2
 set expandtab
 
 syntax on
@@ -46,6 +47,8 @@ autocmd BufNewFile,BufRead *Makefile,*.mk setlocal noexpandtab
 autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
 au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au FileType python set omnifunc=pythoncomplete#Complete
+autocmd BufNewFile,BufRead *.html.erb setlocal filetype=html
+autocmd BufNewFile,BufRead *.js,*.js.coffee abbreviate cl console.log
 let g:SuperTabDefaultCompletionType = "context"
 " Mappings
 " ========
@@ -103,5 +106,11 @@ autocmd InsertLeave * :set relativenumber
 
 vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
 map <leader>c :CoffeeCompile<CR>
+
+set titlestring=%M%t
+
+cabbr cspui cd ~/codez/spui/spui-webapp/
+cabbr erc e ~/.vimrc
+cabbr ezrc e ~/.zshrc
 
 source ~/.vimrc_local
