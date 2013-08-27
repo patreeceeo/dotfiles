@@ -1,3 +1,4 @@
 #!/bin/bash
 
 export rvm_pretty_print_flag=1
+rvm_trust_rvmrcs_flag=1

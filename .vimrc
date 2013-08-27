@@ -6,7 +6,7 @@ if has("gui_macvim")
     " macmenu &File.New\ Tab key=<nop>
     map <D-t> :CommandT<CR>
     set guioptions=egmt
-    set guifont=Monaco:h14
+    set guifont=Monaco:h16
 endif
 
 set spell
@@ -49,6 +49,7 @@ au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smart
 au FileType python set omnifunc=pythoncomplete#Complete
 autocmd BufNewFile,BufRead *.html.erb setlocal filetype=html
 autocmd BufNewFile,BufRead *.js,*.js.coffee abbreviate cl console.log
+autocmd BufNewFile,BufRead *.js,*.js.coffee abbreviate cdb console.debug
 let g:SuperTabDefaultCompletionType = "context"
 " Mappings
 " ========
@@ -114,3 +115,22 @@ cabbr erc e ~/.vimrc
 cabbr ezrc e ~/.zshrc
 
 source ~/.vimrc_local
+
+function! SetTabWidth (tw)
+  echo 'tabwidth:'
+  let new_tw=str2nr(a:tw)
+  echo new_tw
+  set shiftwidth={new_tw}
+  set tabstop={new_tw}
+  set softtabstop={new_tw}
+endfunction
+
+command! -nargs=1 SetTabWidth call SetTabWidth(<f-args>)
+
+function! GoToCode (projname)
+  echo a:projname
+  cd $HOME."/codez/"
+  cd ${a:projname}
+endfunction
+
+command! -nargs=1 Code call GoToCode(<f-args>)

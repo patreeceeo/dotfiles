@@ -19,3 +19,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 source "$HOME/aliases.zsh"
 [[ -s "$HOME/.zshrc_local" ]] && source "$HOME/.zshrc_local"
 
+galileo-serve-component () {
+	cd ~/codez/galileo-$1
+	telescope serve -p $2
+}

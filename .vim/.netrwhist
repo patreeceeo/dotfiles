@@ -1,10 +1,10 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/pcanfield/codez/spui/spui-webapp/app/assets/javascripts/widgets'
-let g:netrw_dirhist_2='/Users/pcanfield/codez/spui/spui-webapp/app/assets/templates/widgets'
-let g:netrw_dirhist_3='/Users/pcanfield/codez/spui/spui-webapp/spec/javascripts'
-let g:netrw_dirhist_4='/Users/pcanfield/.telescope'
-let g:netrw_dirhist_5='/Users/pcanfield/codez/galileo-email-message-settings-editor'
-let g:netrw_dirhist_6='/Users/pcanfield/codez/galileo-email-message-settings-editor/assets'
-let g:netrw_dirhist_7='/Users/pcanfield/.zprezto'
-let g:netrw_dirhist_8='/Users/pcanfield/.rvm/hooks'
+let g:netrw_dirhist_2='/Users/pcanfield/codez/galileo-image-palette'
+let g:netrw_dirhist_3='/Users/pcanfield/codez/galileo-image-palette/assets'
+let g:netrw_dirhist_4='/Users/pcanfield/codez/galileo-email-physical-address-editor'
+let g:netrw_dirhist_5='/Users/pcanfield/codez/galileo-email-physical-address-editor/assets'
+let g:netrw_dirhist_6='/Users/pcanfield/codez/galileo-email-physical-address-editor'
+let g:netrw_dirhist_7='/Users/pcanfield/codez/galileo-email-physical-address-editor/state'
+let g:netrw_dirhist_8='/Users/pcanfield/codez/galileo-email-physical-address-editor/state/schema'
