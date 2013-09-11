@@ -1,3 +1,4 @@
 .*.sw*
 .vim/view/*
 *nohup.out
+.vim/.netrwhist

@@ -30,6 +30,7 @@ _alias gl    'git log'
 _alias gy    'git clone'
 _alias gs    'git status -v | less'
 _alias gb    'git branch'
+_alias grm   'git rm'
 function gycc () {
   git clone "git://github.roving.com/$1.git"
 }
