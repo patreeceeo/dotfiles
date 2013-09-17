@@ -7,6 +7,8 @@ if has("gui_macvim")
     map <D-t> :CommandT<CR>
     set guioptions=egmt
     set guifont=Monaco:h16
+else
+    set mouse=a
 endif
 
 set spell
@@ -24,7 +26,8 @@ filetype plugin indent on
 set nu
 set title
 set wildmenu
-set wildmode=full
+" set wildmode=full
+set wildmode=list:longest,full
 set autoindent
 set smartindent
 set ignorecase
@@ -134,3 +137,5 @@ function! GoToCode (projname)
 endfunction
 
 command! -nargs=1 Code call GoToCode(<f-args>)
+
+
