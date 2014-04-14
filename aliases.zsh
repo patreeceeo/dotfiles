@@ -3,6 +3,8 @@ function alias_win() {
 ((ALIAS_SCORE = ALIAS_SCORE + 1))
 }
 
+CODE_HOME=$HOME/codez
+
 function _alias() {
   alias $1=$2
 }
@@ -18,7 +20,7 @@ function vim () {
 }
 
 _alias g     'git status --verbose'
-_alias ga    'git add .'
+_alias ga    'git add -A .'
 _alias gc    'git commit'
 _alias gcre  'git commit -c HEAD --res'
 _alias gco   'git checkout'
@@ -31,6 +33,7 @@ _alias gy    'git clone'
 _alias gs    'git status -v | less'
 _alias gb    'git branch'
 _alias grm   'git rm'
+_alias gr    'git remote -v'
 function gycc () {
   git clone "git://github.roving.com/$1.git"
 }
@@ -49,6 +52,8 @@ _alias cspui  'cd ~/codez/spui/spui-webapp/'
 _alias cscrui 'cd ~/codez/scrui/scrui-webapp/'
 
 _alias tele   'bundle exec telescope'
+
+_alias meteor 'noglob meteor'
 
 function f. () {
   find . -name $1 2>/dev/null

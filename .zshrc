@@ -23,3 +23,9 @@ galileo-serve-component () {
 	cd ~/codez/galileo-$1
 	telescope serve -p $2
 }
+
+# Menu completion for kill command!
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*'   force-list always
+
+source ~/git-prompt.zsh

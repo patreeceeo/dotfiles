@@ -1,10 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/pcanfield/codez/spui/spui-webapp/app/assets/javascripts/widgets'
-let g:netrw_dirhist_2='/Users/pcanfield/codez/galileo-image-palette'
-let g:netrw_dirhist_3='/Users/pcanfield/codez/galileo-image-palette/assets'
-let g:netrw_dirhist_4='/Users/pcanfield/codez/galileo-email-physical-address-editor'
-let g:netrw_dirhist_5='/Users/pcanfield/codez/galileo-email-physical-address-editor/assets'
-let g:netrw_dirhist_6='/Users/pcanfield/codez/galileo-email-physical-address-editor'
-let g:netrw_dirhist_7='/Users/pcanfield/codez/galileo-email-physical-address-editor/state'
-let g:netrw_dirhist_8='/Users/pcanfield/codez/galileo-email-physical-address-editor/state/schema'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/pcanfield/codez/auth-devportal/auth-devportal-webapp/app/views'
+let g:netrw_dirhist_2='/Users/pcanfield/codez/auth-devportal/auth-devportal-webapp/app/views/layouts'
+let g:netrw_dirhist_3='/Users/pcanfield/codez/auth-devportal/auth-devportal-webapp/app/controllers'
+let g:netrw_dirhist_4='/Users/pcanfield/codez/meteor-surveys/packages/bem-view'
+let g:netrw_dirhist_5='/Users/pcanfield/codez/meteor-surveys/packages/bem-view/lib'

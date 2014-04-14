@@ -51,8 +51,9 @@ autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
 au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au FileType python set omnifunc=pythoncomplete#Complete
 autocmd BufNewFile,BufRead *.html.erb setlocal filetype=html
-autocmd BufNewFile,BufRead *.js,*.js.coffee abbreviate cl console.log
-autocmd BufNewFile,BufRead *.js,*.js.coffee abbreviate cdb console.debug
+autocmd BufNewFile,BufRead *.js,*.coffee abbreviate cl console.log
+autocmd BufNewFile,BufRead *.js,*.coffee abbreviate cdb console.debug
+autocmd BufNewFile,BufRead *.js,*.coffee abbreviate dbg debugger
 let g:SuperTabDefaultCompletionType = "context"
 " Mappings
 " ========
@@ -138,4 +139,10 @@ endfunction
 
 command! -nargs=1 Code call GoToCode(<f-args>)
 
+" Consider dashes (-) part of words
+set iskeyword+=-
 
+let g:syntastic_mode_map={ 'mode': 'active',
+                     \ 'active_filetypes': [],
+                     \ 'passive_filetypes': ['html'] }
+:set shell=/bin/zsh
