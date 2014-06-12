@@ -35,9 +35,8 @@ _alias gs    'git status -v | less'
 _alias gb    'git branch'
 _alias grm   'git rm'
 _alias gr    'git remote -v'
-function gycc () {
-  git clone "git://github.roving.com/$1.git"
-}
+_alias gx    'git reset --hard'
+
 function gygh () {
   git clone "git://github.com/$1.git"
 }
@@ -47,8 +46,7 @@ _alias be   'bundle exec'
 _alias bake 'bundle exec rake'
 _alias beg  'bundle exec guard'
 
-_alias c      'cdr'
-_alias code   'cd ~/codez/'
+_alias code   "cd $CODE_HOME"
 
 _alias meteor 'noglob meteor'
 
