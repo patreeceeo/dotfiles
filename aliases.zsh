@@ -6,10 +6,13 @@ function alias_win() {
 CODE_HOME=$HOME/codez
 
 function _alias() {
+  echo "$1 \t\t=> $2"
   alias $1=$2
 }
 
-_alias aliases 'vim ~/aliases.zsh'
+echo "Remember to use your aliases!"
+
+_alias valias 'vim ~/aliases.zsh'
 _alias 'hs'    'history-stat'
 _alias 'rc'    "source $HOME/.zshrc"
 
