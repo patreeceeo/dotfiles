@@ -27,6 +27,7 @@ _alias gco   'git checkout'
 _alias gps   'git push'
 _alias gpl   'git pull'
 _alias gdf   'git diff'
+_alias gdfc  'git diff --cached'
 _alias glg   'git log --graph --format=oneline'
 _alias gl    'git log'
 _alias gy    'git clone'
@@ -48,10 +49,6 @@ _alias beg  'bundle exec guard'
 
 _alias c      'cdr'
 _alias code   'cd ~/codez/'
-_alias cspui  'cd ~/codez/spui/spui-webapp/'
-_alias cscrui 'cd ~/codez/scrui/scrui-webapp/'
-
-_alias tele   'bundle exec telescope'
 
 _alias meteor 'noglob meteor'
 
