@@ -60,7 +60,7 @@ bind .:ctrl;cmd  ${bottomright}
 # home row above window. Logos will appear on these letters, and you
 # can press the letter to switch to that window.
 #
-bind ;:cmd;ctrl hint ASDFGHJKL
+bind ;:ctrl hint ASDFGHJKL
 
 
 

@@ -10,7 +10,11 @@ function _alias() {
   alias $1=$2
 }
 
-echo "Remember to use your aliases!"
+function _function() {
+  echo "$(which $1)"
+}
+
+echo "Remember to use your aliases and functions!"
 
 _alias valias 'vim ~/aliases.zsh'
 _alias 'hs'    'history-stat'
@@ -48,26 +52,30 @@ _alias bi   'bundle install'
 _alias be   'bundle exec'
 _alias bake 'bundle exec rake'
 _alias beg  'bundle exec guard'
-
-_alias code   "cd $CODE_HOME"
-
 _alias meteor 'noglob meteor'
+
+function code () {
+  cd "$CODE_HOME/$1"
+  g
+}
+_function code
 
 function f. () {
   find . -name $1 2>/dev/null
-  alias_win
 }
+_function f.
 
 function gr. () {
   grep -r $1 .
-  alias_win
 }
+_function gr.
 
 function gr () {
   grep -r $1 $2
-  alias_win
 }
+_function gr
 
 function gimme_port () {
   kill -9 $(lsof -i :$1 -Fp | sed -E 's/.([0-9]+)/\1/')
 }
+_function gimme_port
