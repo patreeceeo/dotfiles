@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Run specs with great speed and daring-do.
+#
+
+# TODO: also try if [ -S .zeus.sock ]
+if [ -S .zeus.sock ]; then
+  zeus rspec --no-color -fd $1
+else
+  echo "Start Zeus!"
+  bundle exec rspec $1
+fi

@@ -19,6 +19,8 @@ if [ -d "/usr/local/git/bin" ] ; then
     PATH="/usr/local/git/bin:$PATH"
 fi
 
+PATH="/usr/local/Cellar/macvim/7.4-73/bin:$PATH"
+
 #put /usr/local/lib in your LD_LIBRARY_PATH
 LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 

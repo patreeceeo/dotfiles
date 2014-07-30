@@ -7,13 +7,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/share/npm/bin
-# export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=/usr/local/bin:/usr/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/share/npm/bin:/usr/local/Cellar/macvim/7.4-73/bin:$HOME/.rvm/bin:$HOME/bin
 
 PYTHONSTARTUP=~/.pythonrc.py
 export PYTHONSTARTUP
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # local settings for this machine
 source "$HOME/aliases.zsh"

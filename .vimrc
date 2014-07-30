@@ -51,9 +51,11 @@ autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
 au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au FileType python set omnifunc=pythoncomplete#Complete
 autocmd BufNewFile,BufRead *.html.erb setlocal filetype=html
+autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
 autocmd BufNewFile,BufRead *.js,*.coffee abbreviate cl console.log
 autocmd BufNewFile,BufRead *.js,*.coffee abbreviate cdb console.debug
 autocmd BufNewFile,BufRead *.js,*.coffee abbreviate dbg debugger
+autocmd BufNewFile,BufRead *.rb,*.rake abbreviate pry binding.pry
 let g:SuperTabDefaultCompletionType = "context"
 " Mappings
 " ========
@@ -146,3 +148,44 @@ let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'active_filetypes': [],
                      \ 'passive_filetypes': ['html'] }
 :set shell=/bin/zsh
+
+
+
+" rspec mappings
+map <Leader>p :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>r :call RunLastSpec()<CR>
+
+function! RunCurrentSpecFile()
+  if InSpecFile()
+    let l:command = "s %"
+    call SetLastSpecCommand(l:command)
+    call RunSpecs(l:command)
+  endif
+endfunction
+
+function! RunNearestSpec()
+  if InSpecFile()
+    let l:command = "s %:" . line(".")
+    call SetLastSpecCommand(l:command)
+    call RunSpecs(l:command)
+  endif
+endfunction
+
+function! RunLastSpec()
+  if exists("t:last_spec_command")
+    call RunSpecs(t:last_spec_command)
+  endif
+endfunction
+
+function! InSpecFile()
+  return match(expand("%"), "_spec.rb$") != -1
+endfunction
+
+function! SetLastSpecCommand(command)
+  let t:last_spec_command = a:command
+endfunction
+
+function! RunSpecs(command)
+  execute ":w\|!" . a:command
+endfunction
