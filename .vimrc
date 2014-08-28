@@ -116,7 +116,6 @@ map <leader>c :CoffeeCompile<CR>
 
 set titlestring=%M%t
 
-cabbr cspui cd ~/codez/spui/spui-webapp/
 cabbr erc e ~/.vimrc
 cabbr ezrc e ~/.zshrc
 
@@ -133,13 +132,13 @@ endfunction
 
 command! -nargs=1 SetTabWidth call SetTabWidth(<f-args>)
 
-function! GoToCode (projname)
-  echo a:projname
-  cd $HOME."/codez/"
-  cd ${a:projname}
-endfunction
+" function! GoToCode (projname)
+"   echo a:projname
+"   cd $HOME."/codez/"
+"   cd ${a:projname}
+" endfunction
 
-command! -nargs=1 Code call GoToCode(<f-args>)
+" command! -nargs=1 Code call GoToCode(<f-args>)
 
 " Consider dashes (-) part of words
 set iskeyword+=-
@@ -189,3 +188,5 @@ endfunction
 function! RunSpecs(command)
   execute ":w\|!" . a:command
 endfunction
+
+autocmd BufRead * CommandTFlush

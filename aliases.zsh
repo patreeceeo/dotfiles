@@ -23,7 +23,7 @@ _alias 'rc'    "source $HOME/.zshrc"
 _alias Vim 'mvim -v'
 
 function vim () {
-  nohup mvim $1 > /dev/null
+  nohup mvim $1 $2 $3 > /dev/null
 }
 
 _alias g     'git status --verbose'
@@ -32,7 +32,7 @@ _alias gc    'git commit'
 _alias gcre  'git commit -c HEAD --res'
 _alias gco   'git checkout'
 _alias gps   'git push'
-_alias gpl   'git pull'
+_alias gpl   'git pull --ff-only'
 _alias gdf   'git diff'
 _alias gdfc  'git diff --cached'
 _alias glg   'git log --graph --format=oneline'
@@ -43,6 +43,7 @@ _alias gb    'git branch'
 _alias grm   'git rm'
 _alias gr    'git remote -v'
 _alias gx    'git reset --hard'
+_alias gnf   'git checkout development; git pull --ff-only; git checkout -b'
 
 function gygh () {
   git clone "git://github.com/$1.git"
