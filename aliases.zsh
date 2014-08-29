@@ -44,6 +44,8 @@ _alias grm   'git rm'
 _alias gr    'git remote -v'
 _alias gx    'git reset --hard'
 _alias gnf   'git checkout development; git pull --ff-only; git checkout -b'
+_alias grb   'git rebase'
+_alias grbc  'git add -A && git rebase --continue'
 
 function gygh () {
   git clone "git://github.com/$1.git"

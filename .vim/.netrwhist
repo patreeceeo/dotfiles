@@ -1,11 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/patrickcanfield/codez/synack/app/assets/javascripts'
-let g:netrw_dirhist_2='/Users/patrickcanfield/codez/synack/app/assets/javascripts/boss'
-let g:netrw_dirhist_3='/Users/patrickcanfield/codez/synack'
-let g:netrw_dirhist_4='/Users/patrickcanfield/codez/synack/app'
-let g:netrw_dirhist_5='/Users/patrickcanfield/codez/synack/app/operations'
-let g:netrw_dirhist_6='/Users/patrickcanfield/codez/synack/app'
-let g:netrw_dirhist_7='/Users/patrickcanfield/codez/synack'
-let g:netrw_dirhist_8='/Users/patrickcanfield/codez/synack/app'
-let g:netrw_dirhist_9='/Users/patrickcanfield/codez/synack/app/decorators'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/patrickcanfield/codez/synack/app/assets/stylesheets/platform'
+let g:netrw_dirhist_2='/Users/patrickcanfield/codez/synack/app/assets/stylesheets/platform/global'

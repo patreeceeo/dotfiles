@@ -50,6 +50,8 @@ autocmd BufNewFile,BufRead *Makefile,*.mk setlocal noexpandtab
 autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
 au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au FileType python set omnifunc=pythoncomplete#Complete
+au FileType ruby setlocal iskeyword+=!
+au FileType ruby setlocal iskeyword+=?
 autocmd BufNewFile,BufRead *.html.erb setlocal filetype=html
 autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
 autocmd BufNewFile,BufRead *.js,*.coffee abbreviate cl console.log
