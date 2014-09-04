@@ -16,9 +16,17 @@ export PYTHONSTARTUP
 source "$HOME/aliases.zsh"
 [[ -s "$HOME/.zshrc_local" ]] && source "$HOME/.zshrc_local"
 
+for file in id_rsa_github id_rsa_synack; do
+  if [[ -s "$HOME/.ssh/$file" ]] then
+    ssh-add "$HOME/.ssh/$file"
+  fi
+done
+
+
 # Menu completion for kill command!
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*'   force-list always
 
 source ~/git-prompt.zsh
 ssh-add ~/.ssh/id_rsa_github
+

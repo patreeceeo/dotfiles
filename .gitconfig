@@ -1,0 +1,8 @@
+[user]
+	name = patrick2
+	email = patrick.canfield@synack.com
+[core]
+	editor = mvim -v
+[push]
+	default = simple
+
