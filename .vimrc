@@ -7,12 +7,13 @@ if has("gui_macvim")
     map <D-t> :CommandT<CR>
     set guioptions=egmt
     set guifont=Monaco:h16
+    set bg=light
 else
     set mouse=a
+    set bg=dark
 endif
 
 set spell
-set bg=dark
 colorscheme solarized
 
 set ts=2
@@ -44,7 +45,7 @@ set nowrapscan
 cmap W! w !sudo tee % >/dev/null
 
 " FileType specific changes
-" =========================
+" ========================= 
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2,*.erb setlocal ft=xml
 autocmd BufNewFile,BufRead *Makefile,*.mk setlocal noexpandtab
 autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
@@ -54,10 +55,11 @@ au FileType ruby setlocal iskeyword+=!
 au FileType ruby setlocal iskeyword+=?
 autocmd BufNewFile,BufRead *.html.erb setlocal filetype=html
 autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
-autocmd BufNewFile,BufRead *.js,*.coffee abbreviate cl console.log
-autocmd BufNewFile,BufRead *.js,*.coffee abbreviate cdb console.debug
-autocmd BufNewFile,BufRead *.js,*.coffee abbreviate dbg debugger
-autocmd BufNewFile,BufRead *.rb,*.rake abbreviate pry binding.pry
+autocmd BufNewFile,BufRead *.js,*.coffee iabbr <buffer> cl console.log
+autocmd BufNewFile,BufRead *.js,*.coffee iabbr <buffer> cdb console.debug
+autocmd BufNewFile,BufRead *.js,*.coffee iabbr <buffer> dbg debugger
+autocmd BufNewFile,BufRead *.js,*.coffee inoremap <buffer> -> function () {<CR>}<Esc>O<Esc>ddO 
+autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
 let g:SuperTabDefaultCompletionType = "context"
 " Mappings
 " ========
@@ -192,3 +194,4 @@ function! RunSpecs(command)
 endfunction
 
 autocmd BufRead * CommandTFlush
+
