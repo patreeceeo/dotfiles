@@ -7,13 +7,12 @@ if has("gui_macvim")
     map <D-t> :CommandT<CR>
     set guioptions=egmt
     set guifont=Monaco:h16
-    set bg=light
 else
     set mouse=a
-    set bg=dark
 endif
 
 set spell
+set bg=dark
 colorscheme solarized
 
 set ts=2
@@ -191,6 +190,16 @@ endfunction
 
 function! RunSpecs(command)
   execute ":w\|!" . a:command
+endfunction
+
+command! -nargs=? EFC call EditFilesContaining(<q-args>)
+
+function! EditFilesContaining(pattern)
+  let files=split(system("ag -l --nocolor ".a:pattern))
+  echom "Editing the first 20 results"
+  for file in files[0:20]
+    execute("tabedit ".file)
+  endfor
 endfunction
 
 autocmd BufRead * CommandTFlush
