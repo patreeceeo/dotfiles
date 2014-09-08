@@ -30,3 +30,4 @@ zstyle ':completion:*:kill:*'   force-list always
 source ~/git-prompt.zsh
 ssh-add ~/.ssh/id_rsa_github
 
+EDITOR='mvim -v'
