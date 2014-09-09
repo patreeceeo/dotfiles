@@ -32,6 +32,7 @@ _alias gc    'git commit'
 _alias gcre  'git commit -c HEAD --res'
 _alias gco   'git checkout'
 _alias gps   'git push'
+_alias gpsu  'git push -u'
 _alias gpl   'git pull --ff-only'
 _alias gdf   'git diff'
 _alias gdfc  'git diff --cached'
@@ -43,13 +44,17 @@ _alias gb    'git branch'
 _alias grm   'git rm'
 _alias gr    'git remote -v'
 _alias gx    'git reset --hard'
-_alias gnf   'git checkout development; git pull --ff-only; git checkout -b'
 _alias grb   'git rebase'
 _alias grbc  'git add -A && git rebase --continue'
 
-function gygh () {
-  git clone "git://github.com/$1.git"
+function gnf () {
+  git checkout development
+  git pull --ff-only
+  git checkout -b $1
+  git branch --edit-description
 }
+_function gnf
+
 
 _alias bi   'bundle install'
 _alias be   'bundle exec'
@@ -59,7 +64,7 @@ _alias meteor 'noglob meteor'
 
 function code () {
   cd "$CODE_HOME/$1"
-  g
+  git status --verbose
 }
 _function code
 

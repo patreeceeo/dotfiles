@@ -12,7 +12,7 @@ else
 endif
 
 set spell
-set bg=dark
+set bg=light
 colorscheme solarized
 
 set ts=2
