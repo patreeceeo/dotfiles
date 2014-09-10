@@ -52,6 +52,7 @@ function gnf () {
   git pull --ff-only
   git checkout -b $1
   git branch --edit-description
+  git push --set-upstream origin $1
 }
 _function gnf
 
