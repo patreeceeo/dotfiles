@@ -46,6 +46,7 @@ _alias gr    'git remote -v'
 _alias gx    'git reset --hard'
 _alias grb   'git rebase'
 _alias grbc  'git add -A && git rebase --continue'
+_alias gbe   'git branch --edit-description'
 
 function gnf () {
   git checkout development
@@ -55,6 +56,11 @@ function gnf () {
   git push --set-upstream origin $1
 }
 _function gnf
+function gcoo () {
+  git checkout $1
+  vim -S ~/Dropbox/$1.vim
+}
+_function gcoo
 
 
 _alias bi   'bundle install'
