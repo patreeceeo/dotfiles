@@ -38,5 +38,6 @@ Thumbs.db
 
 # Editor generated files #
 # ########################
+.*.swp
 .*.sw*
 

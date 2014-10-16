@@ -94,3 +94,9 @@ function gimme_port () {
   kill -9 $(lsof -i :$1 -Fp | sed -E 's/.([0-9]+)/\1/')
 }
 _function gimme_port
+
+# For Python's virtualevn
+function venv () {
+  echo "$HOME/virtualenvs/$(basename $(pwd))"
+}
+_function venv
