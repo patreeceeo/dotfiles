@@ -39,5 +39,9 @@ Thumbs.db
 # Editor generated files #
 # ########################
 .*.swp
+.swp
 .*.sw*
 
+# Node.js
+# ########################
+node_modules

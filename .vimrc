@@ -1,3 +1,4 @@
+
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -12,8 +13,8 @@ else
 endif
 
 set spell
-set bg=light
-colorscheme solarized
+" set bg=light
+colorscheme thornbird
 
 set ts=2
 set sts=2
@@ -38,6 +39,8 @@ set history=200
 set scrolloff=4
 set incsearch
 set wrap
+set linebreak
+set nolist
 set ruler
 set nowrapscan
 " Use W! to save a file as superuser
@@ -54,11 +57,14 @@ au FileType ruby setlocal iskeyword+=!
 au FileType ruby setlocal iskeyword+=?
 autocmd BufNewFile,BufRead *.html.erb setlocal filetype=html
 autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
-autocmd BufNewFile,BufRead *.js,*.coffee iabbr <buffer> cl console.log
-autocmd BufNewFile,BufRead *.js,*.coffee iabbr <buffer> cdb console.debug
-autocmd BufNewFile,BufRead *.js,*.coffee iabbr <buffer> dbg debugger
-autocmd BufNewFile,BufRead *.js,*.coffee inoremap <buffer> -> function () {<CR>}<Esc>O<Esc>ddO 
+autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx iabbr <buffer> cl console.log
+autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx iabbr <buffer> cdb console.debug
+autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx iabbr <buffer> dbg debugger
+autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx inoremap <buffer> -> function () {<CR>}<Esc>O<Esc>ddO 
 autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
+autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
+autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+
 let g:SuperTabDefaultCompletionType = "context"
 " Mappings
 " ========
@@ -149,7 +155,23 @@ set iskeyword+=-
 let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'active_filetypes': [],
                      \ 'passive_filetypes': ['html'] }
-:set shell=/bin/zsh
+
+if filereadable(expand('%:p:h')."/.jshintrc") 
+  let g:syntastic_javascript_checkers = ['jshint']
+else
+  let g:syntastic_javascript_checkers = ['eslint']
+endif
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 3
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+set shell=/bin/zsh
 
 
 
@@ -204,3 +226,7 @@ endfunction
 
 autocmd BufRead * CommandTFlush
 
+" Use JSX hilighting in javascript files
+let g:jsx_ext_required = 0
+
+let g:fixmyjs_rc_path = "$HOME/.eslintrc.js"

@@ -25,6 +25,7 @@ _alias Vim 'mvim -v'
 function vim () {
   nohup mvim $1 $2 $3 > /dev/null
 }
+_function vim
 
 _alias g     'git status --verbose'
 _alias ga    'git add -A .'
@@ -43,7 +44,6 @@ _alias gs    'git status -v | less'
 _alias gb    'git branch'
 _alias grm   'git rm'
 _alias gr    'git remote -v'
-_alias gx    'git reset --hard'
 _alias grb   'git rebase'
 _alias grbc  'git add -A && git rebase --continue'
 _alias gbe   'git branch --edit-description'
@@ -56,6 +56,7 @@ function gnf () {
   git push --set-upstream origin $1
 }
 _function gnf
+
 function gcoo () {
   git checkout $1
   vim -S ~/Dropbox/$1.vim
@@ -67,6 +68,31 @@ _alias bi   'bundle install'
 _alias be   'bundle exec'
 _alias bake 'bundle exec rake'
 _alias beg  'bundle exec guard'
+
+function r () {
+  if [[ -e bin/rails ]]; then
+    bin/rails $1 $2 $3 $4 $5 $6 $7 $8 $9
+  else
+    echo "Current directory is not the root of a Rails project"
+  fi
+}
+_function r
+function rk () {
+  if [[ -e bin/rake ]]; then
+    bin/rake $1 $2 $3 $4 $5 $6 $7 $8 $9
+  else
+    echo "Current directory is not the root of a Rails project"
+  fi
+}
+_function rk
+_alias rkdbm 'rk db:migrate'
+function t () {
+  if [[ -e bin/rails ]]; then
+    rspec
+  fi
+}
+_function t
+
 _alias meteor 'noglob meteor'
 
 function code () {
@@ -76,17 +102,17 @@ function code () {
 _function code
 
 function f. () {
-  find . -name $1 2>/dev/null
+  noglob find . -name $1 2>/dev/null
 }
 _function f.
 
 function gr. () {
-  grep -r $1 .
+  noglob grep -r $1 .
 }
 _function gr.
 
 function gr () {
-  grep -r $1 $2
+  noglob grep -r $1 $2
 }
 _function gr
 
@@ -100,3 +126,5 @@ function venv () {
   echo "$HOME/virtualenvs/$(basename $(pwd))"
 }
 _function venv
+
+function witch () { ll $(which $1) }

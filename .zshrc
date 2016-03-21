@@ -7,7 +7,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/share/npm/bin:/usr/local/Cellar/macvim/7.4-73/bin:$HOME/.rvm/bin:$HOME/bin
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/share/npm/bin:/usr/local/Cellar/macvim/7.4-73/bin:$HOME/.rvm/bin:$HOME/bin
 
 PYTHONSTARTUP=~/.pythonrc.py
 export PYTHONSTARTUP
@@ -32,3 +32,5 @@ ssh-add ~/.ssh/id_rsa_github
 ssh-add ~/.ssh/id_rsa_digitalocean
 
 EDITOR='mvim -v'
+
+export JAVA_HOME=$(/usr/libexec/java_home)

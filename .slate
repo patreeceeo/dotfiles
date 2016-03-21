@@ -60,9 +60,14 @@ bind .:ctrl;cmd  ${bottomright}
 # home row above window. Logos will appear on these letters, and you
 # can press the letter to switch to that window.
 #
-bind ;:ctrl hint ASDFGHJKL
+bind ;:ctrl hint
 
 
+# Disable the CMD+TAB binding
+# bind tab:cmd shell path:~/codez /bin/cat
+
+
+# bind .:cmd switch
 
 #
 # These bindings make it so that you can more easily move windows to

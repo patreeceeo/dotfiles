@@ -55,3 +55,24 @@
 [submodule ".vim/bundle/vim-autoswap"]
 	path = .vim/bundle/vim-autoswap
 	url = https://github.com/gioele/vim-autoswap.git
+[submodule ".vim/bundle/vim-javascript-es6"]
+	path = .vim/bundle/vim-javascript-es6
+	url = https://github.com/othree/yajs.vim.git
+[submodule ".vim/bundle/vim-jsx"]
+	path = .vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
+[submodule ".vim/bundle/rainbow_parentheses"]
+	path = .vim/bundle/rainbow_parentheses
+	url = https://github.com/kien/rainbow_parentheses.vim.git
+[submodule "thornbird.vim"]
+	path = thornbird.vim
+	url = https://github.com/xiaody/thornbird.vim.git
+[submodule ".vim/bundle/thornbird.vim"]
+	path = .vim/bundle/thornbird.vim
+	url = https://github.com/xiaody/thornbird.vim.git
+[submodule ".vim/bundle/vim-fixmyjs"]
+	path = .vim/bundle/vim-fixmyjs
+	url = https://github.com/ruanyl/vim-fixmyjs.git
+[submodule ".vim/bundle/vim-toml"]
+	path = .vim/bundle/vim-toml
+	url = https://github.com/cespare/vim-toml.git
