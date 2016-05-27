@@ -1,8 +1,8 @@
 [user]
-	name = patrick2
-	email = patrick.canfield@synack.com
+	name = Patrick
+	email = patrickcandoit@gmail.com
 [core]
-	editor = mvim -v
+	editor = vim
 [push]
 	default = simple
 

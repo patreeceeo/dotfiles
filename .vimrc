@@ -60,7 +60,7 @@ autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
 autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx iabbr <buffer> cl console.log
 autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx iabbr <buffer> cdb console.debug
 autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx iabbr <buffer> dbg debugger
-autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx inoremap <buffer> -> function () {<CR>}<Esc>O<Esc>ddO 
+autocmd BufNewFile,BufRead *.js,*.jsx inoremap <buffer> -> function () {<CR>}<Esc>O<Esc>ddO 
 autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
@@ -72,7 +72,7 @@ let g:SuperTabDefaultCompletionType = "context"
 " Command-T
 nnoremap <silent> <leader>t :CommandT<CR>
 nnoremap <silent> <leader>b :CommandTBuffer<CR>
-set wildignore+=*.pyc,.git,target/*,tmp/*
+set wildignore+=*.pyc,.git,target/*,tmp/*,node_modules/*,bower_components/*,dist/*,build/*,coverage/*
 let g:CommandTMatchWindowReverse=1
 let g:CommandTCancelMap='<Esc>'
 
@@ -161,6 +161,8 @@ if filereadable(expand('%:p:h')."/.jshintrc")
 else
   let g:syntastic_javascript_checkers = ['eslint']
 endif
+
+let g:syntastic_scss_checkers = ['scss-lint']
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1

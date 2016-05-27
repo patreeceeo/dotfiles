@@ -27,10 +27,21 @@ done
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*'   force-list always
 
-source ~/git-prompt.zsh
+# source ~/git-prompt.zsh
 ssh-add ~/.ssh/id_rsa_github
 ssh-add ~/.ssh/id_rsa_digitalocean
 
 EDITOR='mvim -v'
 
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+if [[ -s $HOME/.local_profile ]]; then
+  source $HOME/.local_profile
+fi
+
+# TODO: remove
+# PS1="$(basename $(pwd)) > "
+
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/help

@@ -27,6 +27,7 @@ function vim () {
 }
 _function vim
 
+_alias ll    'ls -la'
 _alias g     'git status --verbose'
 _alias ga    'git add -A .'
 _alias gc    'git commit'
@@ -127,4 +128,6 @@ function venv () {
 }
 _function venv
 
-function witch () { ll $(which $1) }
+function witch () { 
+  ll $(which $1) 
+}

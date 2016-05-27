@@ -1,9 +1,6 @@
 /* global module */
 module.exports = {
   "rules": {
-    "react/react-in-jsx-scope": 1,
-    "react/jsx-uses-react": 1,
-    "react/jsx-uses-vars": 1,
     "no-trailing-spaces": [ 1 ],
     "no-unused-expressions": [
       1,
@@ -21,10 +18,10 @@ module.exports = {
       2,
       2
     ],
-    "quotes": [
-      2,
-      "double"
-    ],
+    // "quotes": [
+    //   2,
+    //   "single"
+    // ],
     "linebreak-style": [
       2,
       "unix"
@@ -41,10 +38,5 @@ module.exports = {
   },
   "extends": "eslint:recommended",
   "ecmaFeatures": {
-    "jsx": true,
-    "experimentalObjectRestSpread": true
-  },
-  "plugins": [
-    "react"
-  ]
+  }
 };
