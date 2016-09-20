@@ -131,3 +131,7 @@ _function venv
 function witch () { 
   ll $(which $1) 
 }
+
+function agsrc () {
+  ag $1 --ignore '[^-]*-spec\.coffee' --ignore-dir 'dist'
+}
