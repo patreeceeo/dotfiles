@@ -14,7 +14,6 @@ endif
 
 set spell
 " set bg=light
-colorscheme thornbird
 
 set ts=2
 set sts=2
@@ -226,7 +225,7 @@ function! EditFilesContaining(pattern)
   endfor
 endfunction
 
-autocmd BufRead * CommandTFlush
+" autocmd BufRead * CommandTFlush
 
 " Use JSX hilighting in javascript files
 let g:jsx_ext_required = 0
