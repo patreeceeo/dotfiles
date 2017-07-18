@@ -1,1 +1,1 @@
-/Users/patrickcanfield/.zprezto/runcoms/zprofile
+/Users/patrick/.zprezto/runcoms/zprofile
