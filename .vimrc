@@ -21,6 +21,7 @@ set sw=2
 set expandtab
 
 syntax on
+colorscheme solarized
 filetype on
 filetype plugin indent on
 set nu
@@ -42,6 +43,7 @@ set linebreak
 set nolist
 set ruler
 set nowrapscan
+set noswapfile
 " Use W! to save a file as superuser
 cmap W! w !sudo tee % >/dev/null
 
@@ -63,17 +65,13 @@ autocmd BufNewFile,BufRead *.js,*.jsx inoremap <buffer> -> function () {<CR>}<Es
 autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+autocmd BufNewFile,BufRead *.js setlocal ts=4 sts=4 sw=4
 
 let g:SuperTabDefaultCompletionType = "context"
 " Mappings
 " ========
 
-" Command-T
-nnoremap <silent> <leader>t :CommandT<CR>
-nnoremap <silent> <leader>b :CommandTBuffer<CR>
-set wildignore+=*.pyc,.git,target/*,tmp/*,node_modules/*,bower_components/*,dist/*,build/*,coverage/*
-let g:CommandTMatchWindowReverse=1
-let g:CommandTCancelMap='<Esc>'
+set wildignore+=*.sw*,*.pyc,.git,target/*,tmp/*,node_modules/*,bower_components/*,dist/*,build/*,coverage/*
 
 " This following was inspired by:
 " http://jeetworks.org/node/89
@@ -98,6 +96,10 @@ vnoremap <S-Left>      <
 vnoremap <S-Right>     > 
 vnoremap <S-Tab>       >
 vnoremap <S-Tab>     <
+
+" vim-commentary
+nnoremap <Leader>\ :Commentary<CR>
+vnoremap <Leader>\ :Commentary<CR>
 
 set foldmethod=indent
 set foldlevel=99
@@ -230,4 +232,4 @@ endfunction
 " Use JSX hilighting in javascript files
 let g:jsx_ext_required = 0
 
-let g:fixmyjs_rc_path = "$HOME/.eslintrc.js"
+

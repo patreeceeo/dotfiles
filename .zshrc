@@ -7,7 +7,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/share/npm/bin:/usr/local/Cellar/macvim/7.4-73/bin:$HOME/.rvm/bin:$HOME/bin
+export PATH=$HOME/codez/eventray/node_modules/.bin:$PATH:/usr/local/bin:/usr/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/share/npm/bin:/usr/local/Cellar/macvim/7.4-73/bin:$HOME/.rvm/bin:$HOME/bin
 
 PYTHONSTARTUP=~/.pythonrc.py
 export PYTHONSTARTUP

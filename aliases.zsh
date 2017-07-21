@@ -132,11 +132,9 @@ function witch () {
   ll $(which $1) 
 }
 
-function agsrc () {
-  ag $1 --ignore '[^-]*-spec\.coffee' --ignore-dir 'dist'
-}
-
 function cd () {
   builtin cd $1
   if [[ -a $(venv) ]]; then source $(venv)/bin/activate; else deactivate; fi
 }
+
+_alias gps1 "git push --set-upstream origin HEAD"
