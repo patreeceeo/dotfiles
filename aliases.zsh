@@ -132,9 +132,24 @@ function witch () {
   ll $(which $1) 
 }
 
+function is_function () {
+  declare -f $1 > /dev/null;
+  if [[ $? = "0" ]]; then echo "yes"; else echo ""; fi
+}
+
+function auto_activate_venv () {
+  if [[ -a $(venv) ]]; then
+    source $(venv)/bin/activate
+  else
+    if [[ -n $(is_function deactivate) ]]; then
+      deactivate
+    fi
+  fi
+}
+
 function cd () {
   builtin cd $1
-  if [[ -a $(venv) ]]; then source $(venv)/bin/activate; else deactivate; fi
+  auto_activate_venv
 }
 
 _alias gps1 "git push --set-upstream origin HEAD"
