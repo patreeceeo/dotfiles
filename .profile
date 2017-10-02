@@ -15,18 +15,10 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-if [ -d "/usr/local/git/bin" ] ; then
-    PATH="/usr/local/git/bin:$PATH"
-fi
-
-PATH="/usr/local/Cellar/macvim/7.4-73/bin:$PATH"
-
-#put /usr/local/lib in your LD_LIBRARY_PATH
 LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
-
-PYTHONSTARTUP=$HOME/.pythonrc.py
 
 export LANGUAGE="en_US:en"
 export LC_MESSAGES="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
+

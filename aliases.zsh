@@ -124,7 +124,7 @@ _function gimme_port
 
 # For Python's virtualevn
 function venv () {
-  echo "$HOME/virtualenvs/$(basename $(pwd))"
+  echo "$HOME/.virtualenvs/$(basename $(pwd))"
 }
 _function venv
 
