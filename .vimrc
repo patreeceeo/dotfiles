@@ -21,7 +21,7 @@ set sw=2
 set expandtab
 
 syntax on
-colorscheme solarized
+colorscheme evening
 filetype on
 filetype plugin indent on
 set nu
@@ -128,8 +128,6 @@ set titlestring=%M%t
 
 cabbr erc e ~/.vimrc
 cabbr ezrc e ~/.zshrc
-
-source ~/.vimrc_local
 
 function! SetTabWidth (tw)
   echo 'tabwidth:'

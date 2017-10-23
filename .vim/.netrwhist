@@ -1,11 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/patrickcanfield/codez/react-es6-commonjs-template/src/shared/like-button-template'
-let g:netrw_dirhist_2='/Users/patrickcanfield/codez/patrickcanfield.com/hugo-project/themes/hyde-x'
-let g:netrw_dirhist_3='/Users/patrickcanfield/codez/patrickcanfield.com/hugo-project/themes/hyde-x/layouts'
-let g:netrw_dirhist_4='/Users/patrickcanfield/codez/patrickcanfield.com'
-let g:netrw_dirhist_5='/Users/pscale/codez/customer-dashboard/src/app/components/while-loading'
-let g:netrw_dirhist_6='/usr/local/etc/nginx/sites-enabled'
-let g:netrw_dirhist_7='/Users/pscale/codez/wpsite/public/wp-content/themes/sage-8.0.0/assets/styles/common'
-let g:netrw_dirhist_8='/Users/patrick'
-let g:netrw_dirhist_9='/Users/patrick/.vim'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/patrick/codez/eventray/node_modules/object-schema-validation'
+let g:netrw_dirhist_2='/Users/patrick/codez/eventray/node_modules/object-schema-validation/src'
