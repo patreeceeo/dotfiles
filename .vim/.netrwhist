@@ -1,4 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/patrick/codez/eventray/node_modules/object-schema-validation'
-let g:netrw_dirhist_2='/Users/patrick/codez/eventray/node_modules/object-schema-validation/src'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/patrick/codez/patrickcanfield.com/gatsby/node_modules/@fortawesome'
+let g:netrw_dirhist_2='/Users/patrick/codez/patrickcanfield.com/gatsby/node_modules/@fortawesome/fontawesome-common-types'
+let g:netrw_dirhist_3='/Users/patrick/codez/patrickcanfield.com/gatsby/node_modules'
+let g:netrw_dirhist_4='/Users/patrick/codez/patrickcanfield.com/gatsby/node_modules/@fortawesome'
+let g:netrw_dirhist_5='/Users/patrick/codez/patrickcanfield.com/gatsby/node_modules/@fortawesome/fontawesome-free-solid'

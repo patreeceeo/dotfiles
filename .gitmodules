@@ -76,3 +76,6 @@
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = http://github.com/tpope/vim-commentary.git
+[submodule ".vim/bundle/vim-grammarous"]
+	path = .vim/bundle/vim-grammarous
+	url = git@github.com:rhysd/vim-grammarous.git

@@ -8,6 +8,7 @@ if has("gui_macvim")
     map <D-t> :CommandT<CR>
     set guioptions=egmt
     set guifont=Monaco:h16
+    set guitablabel=%>%f%M
 else
     set mouse=a
 endif
@@ -65,7 +66,7 @@ autocmd BufNewFile,BufRead *.js,*.jsx inoremap <buffer> -> function () {<CR>}<Es
 autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
-autocmd BufNewFile,BufRead *.js setlocal ts=4 sts=4 sw=4
+let g:markdown_fenced_languages = ['html', 'javascript', 'python']
 
 let g:SuperTabDefaultCompletionType = "context"
 " Mappings

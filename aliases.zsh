@@ -128,8 +128,8 @@ function venv () {
 }
 _function venv
 
-function witch () { 
-  ll $(which $1) 
+function witch () {
+  ll $(which $1)
 }
 
 function is_function () {
@@ -147,9 +147,24 @@ function auto_activate_venv () {
   fi
 }
 
+function remove_node_bin_from_path () {
+  path=("${(@)path:#$(pwd)/node_modules/.bin}")
+}
+
+function add_node_bin_to_path () {
+  if [[ -a $(pwd)/node_modules ]]; then
+    path=(
+      $(pwd)/node_modules/.bin
+      $path
+    )
+  fi
+}
+
 function cd () {
+  remove_node_bin_from_path
   builtin cd $1
   auto_activate_venv
+  add_node_bin_to_path
 }
 
 _alias gps1 "git push --set-upstream origin HEAD"
