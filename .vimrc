@@ -65,6 +65,7 @@ autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx iabbr <buffer> dbg debugger
 autocmd BufNewFile,BufRead *.js,*.jsx inoremap <buffer> -> function () {<CR>}<Esc>O<Esc>ddO 
 autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
+autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.jsx
 autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 let g:markdown_fenced_languages = ['html', 'javascript', 'python']
 
