@@ -148,13 +148,13 @@ function auto_activate_venv () {
 }
 
 function remove_node_bin_from_path () {
-  path=("${(@)path:#$(pwd)/node_modules/.bin}")
+  path=("${(@)path:#$(npm bin)}")
 }
 
 function add_node_bin_to_path () {
-  if [[ -a $(pwd)/node_modules ]]; then
+  if [[ -a $(npm bin) ]]; then
     path=(
-      $(pwd)/node_modules/.bin
+      $(npm bin)
       $path
     )
   fi
