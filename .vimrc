@@ -67,6 +67,7 @@ autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.jsx
 autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+autocmd BufNewFile,BufRead .eslint setlocal filetype=json
 let g:markdown_fenced_languages = ['html', 'javascript', 'python']
 
 let g:SuperTabDefaultCompletionType = "context"
