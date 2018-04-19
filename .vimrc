@@ -68,6 +68,10 @@ autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.jsx
 autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 autocmd BufNewFile,BufRead .eslint setlocal filetype=json
+
+" vvv Just for Plume Design job
+autocmd BufNewFile,BufRead .jade setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
+
 let g:markdown_fenced_languages = ['html', 'javascript', 'python']
 
 let g:SuperTabDefaultCompletionType = "context"

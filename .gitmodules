@@ -88,3 +88,6 @@
 [submodule ".vim/bundle/vim-graphql"]
 	path = .vim/bundle/vim-graphql
 	url = git@github.com:jparise/vim-graphql.git
+[submodule ".vim/bundle/vim-pug"]
+	path = .vim/bundle/vim-pug
+	url = git@github.com:digitaltoad/vim-pug.git
