@@ -91,3 +91,6 @@
 [submodule ".vim/bundle/vim-pug"]
 	path = .vim/bundle/vim-pug
 	url = git@github.com:digitaltoad/vim-pug.git
+[submodule ".vim/bundle/vim-stylus"]
+	path = .vim/bundle/vim-stylus
+	url = git@github.com:iloginow/vim-stylus.git

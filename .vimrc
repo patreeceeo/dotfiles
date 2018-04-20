@@ -67,7 +67,7 @@ autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.jsx
 autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
-autocmd BufNewFile,BufRead .eslint setlocal filetype=json
+autocmd BufNewFile,BufRead .eslintrc setlocal filetype=json
 
 " vvv Just for Plume Design job
 autocmd BufNewFile,BufRead .jade setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
