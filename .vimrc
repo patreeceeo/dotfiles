@@ -78,7 +78,7 @@ let g:SuperTabDefaultCompletionType = "context"
 " Mappings
 " ========
 
-set wildignore+=*.sw*,*.pyc,.git,target/*,tmp/*,node_modules/*,bower_components/*,dist/*,build/*,coverage/*
+set wildignore+=*.sw*,*.pyc,.git,target/*,tmp/*,dist/*,build/*,coverage/*
 
 " This following was inspired by:
 " http://jeetworks.org/node/89
