@@ -135,6 +135,7 @@ set titlestring=%M%t
 
 cabbr erc e ~/.vimrc
 cabbr ezrc e ~/.zshrc
+cabbr <expr> %% expand('%:p:h')
 
 function! SetTabWidth (tw)
   echo 'tabwidth:'
