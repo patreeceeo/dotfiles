@@ -88,3 +88,6 @@
 [submodule ".vim/bundle/vim-stylus"]
 	path = .vim/bundle/vim-stylus
 	url = git@github.com:iloginow/vim-stylus.git
+[submodule ".vim/bundle/vim-jsx-utils"]
+	path = .vim/bundle/vim-jsx-utils
+	url = git@github.com:samuelsimoes/vim-jsx-utils.git
