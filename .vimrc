@@ -53,7 +53,7 @@ set noswapfile
 cmap W! w !sudo tee % >/dev/null
 
 " FileType specific changes
-" ========================= 
+" =========================
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2,*.erb setlocal ft=xml
 autocmd BufNewFile,BufRead *Makefile,*.mk setlocal noexpandtab
 autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
@@ -73,12 +73,10 @@ autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx iabbr <buffer> dbg debugger
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>ja :call JSXEncloseReturn()<CR>
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>ji :call JSXEachAttributeInLine()<CR>
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>je :call JSXExtractPartialPrompt()<CR>
+autocmd BufNewFile,BufRead *.js,*.jsx vnoremap <leader>je :call JSXExtractPartialPrompt()<CR>
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>jc :call JSXChangeTagPrompt()<CR>
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap vat :call JSXSelectTag()<CR>
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
-
-" vvv Just for Plume Design job
-autocmd BufNewFile,BufRead .jade setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
 
 let g:markdown_fenced_languages = ['html', 'javascript', 'python']
 
@@ -256,3 +254,9 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" Emmet-vim Config
+" ================
+
+" let g:user_emmet_mode='nv'
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,javascript.jsx EmmetInstall
