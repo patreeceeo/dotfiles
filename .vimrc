@@ -260,3 +260,19 @@ autocmd BufWinLeave * call clearmatches()
 " let g:user_emmet_mode='nv'
 " let g:user_emmet_install_global = 0
 " autocmd FileType html,javascript.jsx EmmetInstall
+
+
+" OmniSharp-Roslyn C# auto-completion
+" ===================================
+" let g:OmniSharp_server_type = 'roslyn'
+" let g:OmniSharp_server_path = '/Library/Frameworks/Mono.framework/Commands/mono-sgen64 /Users/patrick/Downloads/omnisharp-osx/omnisharp/OmniSharp.exe'
+" let g:OmniSharp_timeout = 5
+" let g:omnisharp_proc_debug = 1
+
+" OmniSharp-server (legacy) C# auto-completion
+" ============================================
+let g:OmniSharp_server_type = 'v1'
+let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
+let g:OmniSharp_server_path = '/Library/Frameworks/Mono.framework/Commands/mono-sgen64 /Users/patrick/codez/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe'
+
+let g:Omnisharp_start_server = 0
