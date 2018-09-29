@@ -1,11 +1,22 @@
 
-call pathogen#infect()
-call pathogen#helptags()
+""" Begin: Configure Vim-Plug """
+call plug#begin('~/.vim/plugged')
+Plug 'elzr/vim-json'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'rhowardiv/nginx-vim-syntax'
+Plug 'scrooloose/syntastic'
+Plug 'clones/vim-l9'
+Plug 'othree/vim-autocomplpop'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-fugitive'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+call plug#end()
+""" End: Configure Vim-Plug """
 
 if has("gui_macvim")
     let macvim_hig_shift_movement = 1
-    " macmenu &File.New\ Tab key=<nop>
-    map <D-t> :CommandT<CR>
     set guioptions=egmt
     set guifont=Monaco:h16
     set guitablabel=%>%f%M
@@ -64,7 +75,7 @@ au FileType ruby setlocal iskeyword+=?
 autocmd BufNewFile,BufRead *.html.erb setlocal filetype=html
 autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
 autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
-autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.jsx
+autocmd BufNewFile,BufRead *.js setlocal filetype=typescript.tsx omnifunc=javascriptcomplete#CompleteJS
 autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 autocmd BufNewFile,BufRead .eslintrc setlocal filetype=json
 autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx iabbr <buffer> cl console.log
@@ -344,3 +355,27 @@ let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
 let g:SuperTabClosePreviewOnPopupClose = 1
+
+
+""" Styling for JSX Typescript
+" " dark red
+" hi tsxTagName guifg=#E06C75
+
+" " orange
+" hi tsxCloseString guifg=#F99575
+" hi tsxCloseTag guifg=#F99575
+" hi tsxAttributeBraces guifg=#F99575
+" hi tsxEqual guifg=#F99575
+
+" " yellow
+" hi tsxAttrib guifg=#F8BD7F cterm=italic
+
+" light blue
+hi tsxTagName guifg=#59ACE5
+" dark blue
+hi tsxCloseString guifg=#2974a1
+hi tsxCloseTag guifg=#2974a1
+hi tsxAttributeBraces guifg=#2974a1
+hi tsxEqual guifg=#2974a1
+" green
+hi tsxAttrib guifg=#1BD1C1

@@ -2,3 +2,4 @@
 .vim/view/*
 *nohup.out
 .vim/.netrwhist
+.vim/plugged
