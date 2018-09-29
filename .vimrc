@@ -7,13 +7,17 @@ Plug 'tpope/vim-surround'
 Plug 'rhowardiv/nginx-vim-syntax'
 Plug 'scrooloose/syntastic'
 Plug 'clones/vim-l9'
-Plug 'othree/vim-autocomplpop'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 """ End: Configure Vim-Plug """
+
+call deoplete#enable()
 
 if has("gui_macvim")
     let macvim_hig_shift_movement = 1
