@@ -1,7 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/patrick/Clients/Awake/Plume/plume-web/server'
 let g:netrw_dirhist_2='/Users/patrick/Clients/Awake/Plume/plume-web/server/middleware'
 let g:netrw_dirhist_3='/Users/patrick/Clients/Awake/Plume/plume-web'
 let g:netrw_dirhist_4='/Users/patrick/Clients/Awake/Plume/plume-web/server'
 let g:netrw_dirhist_5='/Users/patrick/Clients/Awake/Plume/plume-web/src/CheckoutFlow'
+let g:netrw_dirhist_6='/Users/patrick/dotfiles/.vim/plugged/tsuquyomi'
+let g:netrw_dirhist_7='/Users/patrick/dotfiles/.vim/plugged/tsuquyomi/autoload'

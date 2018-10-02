@@ -14,6 +14,7 @@ Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'Quramy/tsuquyomi'
 call plug#end()
 """ End: Configure Vim-Plug """
 
@@ -79,12 +80,11 @@ au FileType ruby setlocal iskeyword+=?
 autocmd BufNewFile,BufRead *.html.erb setlocal filetype=html
 autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
 autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
-autocmd BufNewFile,BufRead *.js setlocal filetype=typescript.tsx omnifunc=javascriptcomplete#CompleteJS
+autocmd BufNewFile,BufRead *.js, *.ts setlocal filetype=typescript.tsx omnifunc=javascriptcomplete#CompleteJS
+" vvv for some reason checking doesn't happen right away without this
+autocmd BufNewFile,BufWrite *.ts SyntasticCheck
 autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 autocmd BufNewFile,BufRead .eslintrc setlocal filetype=json
-autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx iabbr <buffer> cl console.log
-autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx iabbr <buffer> cdb console.debug
-autocmd BufNewFile,BufRead *.js,*.coffee,*.jsx iabbr <buffer> dbg debugger
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>ja :call JSXEncloseReturn()<CR>
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>ji :call JSXEachAttributeInLine()<CR>
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>je :call JSXExtractPartialPrompt()<CR>
@@ -184,7 +184,7 @@ let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'active_filetypes': [],
                      \ 'passive_filetypes': ['html'] }
 
-if filereadable(expand('%:p:h')."/.jshintrc") 
+if filereadable(expand('%:p:h')."/.jshintrc")
   let g:syntastic_javascript_checkers = ['jshint']
 else
   let g:syntastic_javascript_checkers = ['eslint']
@@ -192,7 +192,9 @@ endif
 
 let g:syntastic_scss_checkers = ['scss-lint']
 
-let g:syntastic_typescript_checkers = ['eslint', 'tslint']
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_tsc_fname = ''
+let g:syntastic_typescript_checkers = ['tsc', 'tslint', 'tsuquyomi']
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
