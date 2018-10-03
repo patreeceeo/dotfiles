@@ -80,9 +80,10 @@ au FileType ruby setlocal iskeyword+=?
 autocmd BufNewFile,BufRead *.html.erb setlocal filetype=html
 autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
 autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
-autocmd BufNewFile,BufRead *.js, *.ts setlocal filetype=typescript.tsx omnifunc=javascriptcomplete#CompleteJS
+autocmd BufNewFile,BufRead *.js,*.ts,*.tsx setlocal filetype=typescript.tsx omnifunc=javascriptcomplete#CompleteJS
 " vvv for some reason checking doesn't happen right away without this
-autocmd BufNewFile,BufWrite *.ts SyntasticCheck
+autocmd BufWritePre *.ts,*.tsx SyntasticCheck
+autocmd BufWritePre *.ts,*.tsx TsuGeterr
 autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 autocmd BufNewFile,BufRead .eslintrc setlocal filetype=json
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>ja :call JSXEncloseReturn()<CR>
@@ -194,7 +195,7 @@ let g:syntastic_scss_checkers = ['scss-lint']
 
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_tsc_fname = ''
-let g:syntastic_typescript_checkers = ['tsc', 'tslint', 'tsuquyomi']
+let g:syntastic_typescript_checkers = ['tsc', 'tslint']
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -278,6 +279,14 @@ autocmd BufWinLeave * call clearmatches()
 " let g:user_emmet_install_global = 0
 " autocmd FileType html,javascript.jsx EmmetInstall
 
+" Complete menu stuff
+" ===================
+
+" set completeopt=longest,menuone
+
+" Autoselect first item
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " OmniSharp-Roslyn C# auto-completion
 " ===================================
@@ -295,7 +304,6 @@ let g:OmniSharp_server_use_mono = 1
 " let g:OmniSharp_server_path = '/Library/Frameworks/Mono.framework/Commands/mono-sgen64 /Users/patrick/codez/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe'
 
 let g:Omnisharp_start_server = 1
-set completeopt=longest,menuone
 augroup omnisharp_commands
     autocmd!
 
