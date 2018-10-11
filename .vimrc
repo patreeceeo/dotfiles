@@ -1,6 +1,7 @@
 
 """ Begin: Configure Vim-Plug """
 call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
 Plug 'elzr/vim-json'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -23,14 +24,11 @@ call deoplete#enable()
 if has("gui_macvim")
     let macvim_hig_shift_movement = 1
     set guioptions=egmt
-    set guifont=Monaco:h16
+    set guifont=Fantastic\ Sans\ Mono:h18
     set guitablabel=%>%f%M
 else
     set mouse=a
 endif
-
-set spell
-" set bg=light
 
 set ts=2
 set sts=2
@@ -42,7 +40,11 @@ set expandtab
 set autochdir
 
 syntax on
-colorscheme evening
+set nospell
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_dark='soft'
+let g:gruvbox_italicize_strings=1
 filetype on
 filetype plugin indent on
 set nu
@@ -85,7 +87,7 @@ autocmd BufNewFile,BufRead *.js,*.ts,*.tsx setlocal filetype=typescript.tsx omni
 " vvv for some reason checking doesn't happen right away without this
 autocmd BufWritePre *.ts,*.tsx SyntasticCheck
 autocmd BufWritePre *.ts,*.tsx TsuGeterr
-autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+autocmd BufNewFile,BufRead *.md setlocal filetype=markdown spell
 autocmd BufNewFile,BufRead .eslintrc setlocal filetype=json
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>ja :call JSXEncloseReturn()<CR>
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>ji :call JSXEachAttributeInLine()<CR>
@@ -283,7 +285,7 @@ autocmd BufWinLeave * call clearmatches()
 " Complete menu stuff
 " ===================
 
-" set completeopt=longest,menuone
+set completeopt=longest,menuone
 
 " Autoselect first item
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
