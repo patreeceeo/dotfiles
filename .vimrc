@@ -68,18 +68,19 @@ set noswapfile
 " Use W! to save a file as superuser
 cmap W! w !sudo tee % >/dev/null
 
+
 " FileType specific changes
 " =========================
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2,*.erb setlocal ft=xml
 autocmd BufNewFile,BufRead *Makefile,*.mk setlocal noexpandtab
 autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
 au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-au FileType python set omnifunc=pythoncomplete#Complete
 au FileType ruby setlocal iskeyword+=!
 au FileType ruby setlocal iskeyword+=?
 autocmd BufNewFile,BufRead *.html.erb setlocal filetype=html
 autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
 autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
+autocmd FileType python set omnifunc=python3complete#Complete
 autocmd BufNewFile,BufRead *.js,*.ts,*.tsx setlocal filetype=typescript.tsx omnifunc=javascriptcomplete#CompleteJS
 " vvv for some reason checking doesn't happen right away without this
 autocmd BufWritePre *.ts,*.tsx SyntasticCheck
