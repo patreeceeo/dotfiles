@@ -8,6 +8,10 @@ Plug 'tpope/vim-surround'
 Plug 'rhowardiv/nginx-vim-syntax'
 Plug 'scrooloose/syntastic'
 Plug 'clones/vim-l9'
+" AutoComplPop competes with deoplete and seems to always win.
+" Though it's dumber than deoplete e.g. it doesn't integrate
+" with language-specific services, I still find it more helpful.
+Plug 'vim-scripts/AutoComplPop'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
