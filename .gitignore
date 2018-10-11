@@ -3,3 +3,5 @@
 *nohup.out
 .vim/.netrwhist
 .vim/plugged
+**/node_modules
+
