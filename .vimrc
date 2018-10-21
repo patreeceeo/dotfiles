@@ -28,7 +28,7 @@ call deoplete#enable()
 if has("gui_macvim")
     let macvim_hig_shift_movement = 1
     set guioptions=egmt
-    set guifont=Fantastic\ Sans\ Mono:h18
+    set guifont=Fantasque\ Sans\ Mono:h18
     set guitablabel=%>%f%M
 else
     set mouse=a
