@@ -1,25 +1,10 @@
 #!/bin/sh
 
-dotfiles='
-.config
-.eslintrc.js
-.gitconfig
-.gitignore_global
-.macos
-.profile
-.pythonrc.py
-.rvmrc
-.slate
-.tmux.conf
-.vim
-.vimrc
-.zpreztorc
-.zprofile
-.zshenv
-.zshrc
-'
+source list_files.sh
 
-function link_dotfile() { ln -s $1 $HOME/$(basename $1); }
+dotfiles=$(list_files)
+
+function link_dotfile() { ln -s $HOME/dotfiles/$1 $HOME/$1; }
 
 for file in $dotfiles; do
   echo installing $file
