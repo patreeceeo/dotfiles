@@ -74,11 +74,18 @@ function add_node_bin_to_path () {
   fi
 }
 
+function install_pre_commit_hooks() {
+  if [[ -a '.pre-commit-config.yaml' ]]; then
+    pre-commit install && pre-commit run -a
+  fi
+}
+
 function cd () {
   remove_node_bin_from_path
   builtin cd $1
   auto_activate_venv
   add_node_bin_to_path
+  install_pre_commit_hooks
 }
 _function cd
 
