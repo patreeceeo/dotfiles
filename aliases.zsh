@@ -80,12 +80,24 @@ function install_pre_commit_hooks() {
   fi
 }
 
+function do_git_stuff() {
+  if [[ -a '.git' ]]; then
+    git pull --ff-only
+    echo ""
+    echo "### Git Config ###"
+    git config --include --list
+    echo ""
+    git log -n 1
+  fi
+}
+
 function cd () {
   remove_node_bin_from_path
   builtin cd $1
   auto_activate_venv
   add_node_bin_to_path
   install_pre_commit_hooks
+  do_git_stuff
 }
 _function cd
 

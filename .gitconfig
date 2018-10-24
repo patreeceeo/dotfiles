@@ -1,10 +1,7 @@
-[user]
-	name = Patrick Canfield
-	email = pscale01@gmail.com
 [core]
 	editor = vim
 [push]
 	default = simple
 [include]
-  path = $HOME/.gitconfig_machine_specific
+  path = ~/gitconfig_machine_specific.inc
 
