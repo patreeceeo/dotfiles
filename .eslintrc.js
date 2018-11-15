@@ -10,10 +10,10 @@ module.exports = {
       }
     ],
     "vars-on-top": [ 1 ],
-    "strict" : [
-      2,
-      "global"
-    ],
+    //   "strict" : [
+    //     2,
+    //     "global"
+    //   ],
     "indent": [
       2,
       2
@@ -34,7 +34,9 @@ module.exports = {
   "env": {
     "es6": true,
     "browser": true,
-    "node": true
+    "node": true,
+    "jasmine": true,
+    "angular": true
   },
   "extends": "eslint:recommended",
   "ecmaFeatures": {

@@ -45,3 +45,7 @@ Thumbs.db
 # Node.js
 # ########################
 node_modules
+
+# Rally
+# ########################
+private-config.json

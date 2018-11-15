@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'Quramy/tsuquyomi'
+Plug 'JamshedVesuna/vim-markdown-preview'
 call plug#end()
 """ End: Configure Vim-Plug """
 
@@ -41,7 +42,7 @@ set expandtab
 " automatically CD to directory of file being edited
 " helpful with file path autocompletion
 " and editing sibling files
-set autochdir
+" set autochdir
 
 syntax on
 set nospell
@@ -87,7 +88,8 @@ autocmd BufNewFile,BufRead *.html.erb setlocal filetype=html
 autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
 autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
 autocmd FileType python set omnifunc=python3complete#Complete
-autocmd BufNewFile,BufRead *.js,*.ts,*.tsx setlocal filetype=typescript.tsx omnifunc=javascriptcomplete#CompleteJS
+autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx omnifunc=javascriptcomplete#CompleteJS
+autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript omnifunc=javascriptcomplete#CompleteJS
 " vvv for some reason checking doesn't happen right away without this
 autocmd BufWritePre *.ts,*.tsx SyntasticCheck
 autocmd BufWritePre *.ts,*.tsx TsuGeterr
@@ -100,6 +102,10 @@ autocmd BufNewFile,BufRead *.js,*.jsx vnoremap <leader>je :call JSXExtractPartia
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>jc :call JSXChangeTagPrompt()<CR>
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap vat :call JSXSelectTag()<CR>
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
+
+" Just for Rally
+autocmd BufNewFile,BufRead *.html setlocal ts=4 sts=4 sw=4
+autocmd BufNewFile,BufRead *.scss setlocal ts=4 sts=4 sw=4
 
 let g:markdown_fenced_languages = ['html', 'javascript', 'python']
 
@@ -192,11 +198,7 @@ let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'active_filetypes': [],
                      \ 'passive_filetypes': ['html'] }
 
-if filereadable(expand('%:p:h')."/.jshintrc")
-  let g:syntastic_javascript_checkers = ['jshint']
-else
-  let g:syntastic_javascript_checkers = ['eslint']
-endif
+let g:syntastic_javascript_checkers = ['eslint']
 
 let g:syntastic_scss_checkers = ['scss-lint']
 
@@ -400,3 +402,18 @@ hi tsxAttributeBraces guifg=#2974a1
 hi tsxEqual guifg=#2974a1
 " green
 hi tsxAttrib guifg=#1BD1C1
+
+" Tell vim-markdown-preview to use Github-flavored markdown
+" let vim_markdown_preview_github=1
+
+function! OpenEnclosingFolder()
+  let command = input("command: ")
+  execute command expand('%:p:h')
+endfunction
+
+nnoremap <Leader>. :call OpenEnclosingFolder()<CR>
+
+" command! -nargs=0 DotE call OpenEnclosingFolder('e')
+" command! -nargs=0 DotVS call OpenEnclosingFolder('vs')
+" command! -nargs=0 DotSP call OpenEnclosingFolder('sp')
+

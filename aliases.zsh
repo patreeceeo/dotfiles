@@ -31,16 +31,13 @@ _alias gb    'git branch'
 _alias grm   'git rm'
 _alias gr    'git remote -v'
 
+_alias lc    'colorls -lA --sd'
+
 function gimme_port () {
   kill -9 $(lsof -i :$1 -Fp | sed -E 's/.([0-9]+)/\1/')
 }
 _function gimme_port
 
-# For Python's virtualevn
-function venv () {
-  echo "$HOME/virtualenvs/$(basename $(pwd))"
-}
-_function venv
 
 function witch () {
   ll $(which $1)
@@ -50,6 +47,12 @@ function is_function () {
   declare -f $1 > /dev/null;
   if [[ $? = "0" ]]; then echo "yes"; else echo ""; fi
 }
+
+# For Python's virtualenv
+function venv () {
+  echo "$HOME/virtualenvs/$(basename $(pwd))"
+}
+_function venv
 
 function auto_activate_venv () {
   if [[ -a $(venv) ]]; then

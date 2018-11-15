@@ -1,5 +1,6 @@
 [core]
 	editor = vim
+	excludesfile = /Users/patrick.canfield/.gitignore_global
 [push]
 	default = simple
 [include]
