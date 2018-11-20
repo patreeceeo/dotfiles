@@ -6,3 +6,5 @@
 [include]
   path = ~/gitconfig_machine_specific.inc
 
+[hub]
+	protocol = ssh

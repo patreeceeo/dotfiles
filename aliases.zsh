@@ -16,10 +16,11 @@ function vim () {
 }
 _function vim
 
+_alias git   'hub'
 _alias ll    'ls -la'
 _alias ga    'git add -A .'
 _alias gc    'git commit'
-_alias gco   'git checkout'
+_alias gco   'command git checkout'
 _alias gps   'git push'
 _alias gpl   'git pull --ff-only --stat'
 _alias gpr   'git pull --rebase --stat'
@@ -27,8 +28,8 @@ _alias gdf   'git diff'
 _alias gdfc  'git diff --cached'
 _alias gl    'git log --graph --format=oneline'
 _alias gs    'git status -v | less'
-_alias gb    'git branch'
-_alias grm   'git rm'
+_alias gb    'command git branch'
+_alias grm   'command git rm'
 _alias gr    'git remote -v'
 
 _alias lc    'colorls -lA --sd'
@@ -113,3 +114,65 @@ function gnf () {
   git push --set-upstream origin HEAD
 }
 _function gnf
+
+
+# Show Git branch/tag, or name-rev if on detached head
+parse_git_branch() {
+  (command git symbolic-ref -q HEAD || command git name-rev --name-only --no-undefined --always HEAD) 2>/dev/null
+}
+
+# Show different symbols as appropriate for various Git repository states
+parse_git_state() {
+
+  # Compose this value via multiple conditional appends.
+  local GIT_STATE=""
+
+  local NUM_AHEAD="$(git log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')"
+  if [ "$NUM_AHEAD" -gt 0 ]; then
+    GIT_STATE="$GIT_STATE ${GIT_PROMPT_AHEAD//NUM/$NUM_AHEAD}"
+  fi
+
+  local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
+  if [ "$NUM_BEHIND" -gt 0 ]; then
+    GIT_STATE="$GIT_STATE ${GIT_PROMPT_BEHIND//NUM/$NUM_BEHIND}"
+  fi
+
+  local GIT_DIR="$(git rev-parse --git-dir 2> /dev/null)"
+  if [ -n $GIT_DIR ] && test -r $GIT_DIR/MERGE_HEAD; then
+    GIT_STATE="$GIT_STATE $GIT_PROMPT_MERGING"
+  fi
+
+  if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+    GIT_STATE="$GIT_STATE $GIT_PROMPT_UNTRACKED"
+  fi
+
+  if ! git diff --quiet 2> /dev/null; then
+    GIT_STATE="$GIT_STATE $GIT_PROMPT_MODIFIED"
+  fi
+
+  if ! git diff --cached --quiet 2> /dev/null; then
+    GIT_STATE="$GIT_STATE $GIT_PROMPT_STAGED"
+  fi
+
+  if [[ -n $GIT_STATE ]]; then
+    echo "$GIT_STATE"
+  fi
+
+}
+
+truncate_string() {
+  if [ ${#1} -gt 7 ]; then
+    echo "${1[0,10]}…"
+  else
+    echo $1
+  fi
+}
+
+function jira_ticket() {
+  local git_where="$(parse_git_branch)"
+  [ -n "$git_where" ] && echo ${git_where#(refs/heads/|tags/)} | grep '^[[:alpha:]][[:alpha:]]-[[:digit:]][[:digit:]]' -o | read ticket; echo "https://jira.rallyhealth.com/browse/$ticket"
+}
+
+function test_engage() {
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' http://www.local.werally.in:3000 --disable-web-security --user-data-dir --incognito --disable-features=CrossSiteDocumentBlockingIfIsolating
+}
