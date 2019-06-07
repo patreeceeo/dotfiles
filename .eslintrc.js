@@ -1,6 +1,7 @@
 /* global module */
 module.exports = {
   "rules": {
+    "no-console": [ 1 ],
     "no-trailing-spaces": [ 1 ],
     "no-unused-expressions": [
       1,
@@ -16,12 +17,15 @@ module.exports = {
     //   ],
     "indent": [
       2,
-      2
+      2,
+      {
+        "SwitchCase": 1
+      }
     ],
     // "quotes": [
-    //   2,
-    //   "single"
-    // ],
+    //  1,
+    //  "single"
+    //],
     "linebreak-style": [
       2,
       "unix"
@@ -31,14 +35,19 @@ module.exports = {
       "always"
     ]
   },
+  "globals": {
+    "angular": true,
+    "inject": true
+  },
   "env": {
     "es6": true,
     "browser": true,
     "node": true,
     "jasmine": true,
-    "angular": true
+    "protractor": true
   },
-  "extends": "eslint:recommended",
-  "ecmaFeatures": {
-  }
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ]
 };

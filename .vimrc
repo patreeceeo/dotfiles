@@ -12,19 +12,22 @@ Plug 'clones/vim-l9'
 " Though it's dumber than deoplete e.g. it doesn't integrate
 " with language-specific services, I still find it more helpful.
 Plug 'vim-scripts/AutoComplPop'
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
+" Need pythonx support for this to work
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'roxma/nvim-yarp'
+" Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'Quramy/tsuquyomi'
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'wavded/vim-stylus'
+
 call plug#end()
 """ End: Configure Vim-Plug """
 
-call deoplete#enable()
+" call deoplete#enable()
 
 if has("gui_macvim")
     let macvim_hig_shift_movement = 1
@@ -35,9 +38,9 @@ else
     set mouse=a
 endif
 
-set ts=2
-set sts=2
-set sw=2
+set ts=4
+set sts=4
+set sw=4
 set expandtab
 " automatically CD to directory of file being edited
 " helpful with file path autocompletion
@@ -88,6 +91,7 @@ autocmd BufNewFile,BufRead *.html.erb setlocal filetype=html
 autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
 autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
 autocmd FileType python set omnifunc=python3complete#Complete
+autocmd BufNewFile,BufRead *.js setlocal filetype=javascript omnifunc=javascriptcomplete#CompleteJS
 autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx omnifunc=javascriptcomplete#CompleteJS
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript omnifunc=javascriptcomplete#CompleteJS
 " vvv for some reason checking doesn't happen right away without this
@@ -103,9 +107,8 @@ autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>jc :call JSXChangeTagProm
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap vat :call JSXSelectTag()<CR>
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
 
-" Just for Rally
-autocmd BufNewFile,BufRead *.html setlocal ts=4 sts=4 sw=4
-autocmd BufNewFile,BufRead *.scss setlocal ts=4 sts=4 sw=4
+" autocmd FileType html
+"        \ call deoplete#custom#buffer_option('auto_complete', v:false)
 
 let g:markdown_fenced_languages = ['html', 'javascript', 'python']
 
@@ -138,6 +141,13 @@ vnoremap <S-Left>      <
 vnoremap <S-Right>     > 
 vnoremap <S-Tab>       >
 vnoremap <S-Tab>     <
+
+nnoremap <C-H>    :tabprevious<CR>
+nnoremap <C-L>    :tabnext<CR>
+nnoremap <S-C-H>  :tabprevious
+nnoremap <S-C-L>  :tabnext
+nnoremap <C-J>    :tabfirst<CR>
+nnoremap <C-K>    :tablast<CR>
 
 " vim-commentary
 nnoremap <Leader>\ :Commentary<CR>
@@ -199,12 +209,13 @@ let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'passive_filetypes': ['html'] }
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tslint']
 
 let g:syntastic_scss_checkers = ['scss-lint']
 
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_tsc_fname = ''
-let g:syntastic_typescript_checkers = ['tsc', 'tslint']
+" let g:syntastic_typescript_checkers = ['tsc', 'tslint']
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -417,3 +428,14 @@ nnoremap <Leader>. :call OpenEnclosingFolder()<CR>
 " command! -nargs=0 DotVS call OpenEnclosingFolder('vs')
 " command! -nargs=0 DotSP call OpenEnclosingFolder('sp')
 
+" Tell ctags to load from the current directory
+set tags=.ctags
+
+" Hide the nearly useless banner on the file explorer
+let g:netrw_banner = 0
+" Open files in previous window
+let g:netrw_browse_split = 4
+" Set size as % of current window
+let g:netrw_winsize = 12
+" Use tree style
+let g:netrw_liststyle = 3

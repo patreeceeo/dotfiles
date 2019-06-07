@@ -16,8 +16,9 @@ function vim () {
 }
 _function vim
 
-_alias git   'hub'
-_alias ll    'ls -la'
+_alias ll    'colorls -lA --sd'
+_alias cat   'ccat'
+
 _alias ga    'git add -A .'
 _alias gc    'git commit'
 _alias gco   'command git checkout'
@@ -26,13 +27,14 @@ _alias gpl   'git pull --ff-only --stat'
 _alias gpr   'git pull --rebase --stat'
 _alias gdf   'git diff'
 _alias gdfc  'git diff --cached'
-_alias gl    'git log --graph --format=oneline'
+_alias gl    'git log'
+_alias gll   'git log --graph --format=oneline'
 _alias gs    'git status -v | less'
 _alias gb    'command git branch'
 _alias grm   'command git rm'
 _alias gr    'git remote -v'
+_alias git   'hub'
 
-_alias lc    'colorls -lA --sd'
 
 function gimme_port () {
   kill -9 $(lsof -i :$1 -Fp | sed -E 's/.([0-9]+)/\1/')
@@ -175,4 +177,43 @@ function jira_ticket() {
 
 function test_engage() {
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' http://www.local.werally.in:3000 --disable-web-security --user-data-dir --incognito --disable-features=CrossSiteDocumentBlockingIfIsolating
+}
+
+# very Pink Panther specific
+function workon() {
+  cd ~/Code/pink-panther/
+
+  add_node_bin_to_path
+
+  ticket_id=$1
+  config_js_path=app/scripts/app/config.js
+
+  git checkout master
+
+  if [[ $? -ne 0 ]]; then
+    return
+  fi
+
+  git pull
+  git checkout $ticket_id 2>/dev/null
+
+  if [[ $? -ne 0 ]]; then
+    git checkout -b $ticket_id
+    vim $config_js_path
+  else
+    git checkout $ticket_id
+    git merge master
+
+    gimme_port 3000 2>/dev/null
+    if [[ $? -eq 0 ]]; then
+      rm -rf node_modules/.cache/hard-source
+      echo "Reminder: restart server"
+    fi
+
+  fi
+
+  git diff --exit-code $config_js_path
+  if [[ $? -eq 0 ]]; then
+    git apply ~/Code/patches/pink-panther-use-zerocats.patch
+  fi
 }

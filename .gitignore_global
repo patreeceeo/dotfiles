@@ -49,3 +49,4 @@ node_modules
 # Rally
 # ########################
 private-config.json
+app/scripts/app/config.js

@@ -2,7 +2,6 @@
 # Executes commands at the start of an interactive session.
 #
 
-source "$HOME/aliases.zsh"
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -10,6 +9,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   zstyle ':prezto:module:git:info' verbose 'yes'
 fi
 
+source "$HOME/aliases.zsh"
 
 auto_activate_venv
 
@@ -66,3 +66,5 @@ if [ -f "${SSH_ENV}" ]; then
 else
      start_ssh_agent;
 fi
+
+export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
