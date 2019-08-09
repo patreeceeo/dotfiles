@@ -29,18 +29,9 @@ call plug#end()
 
 " call deoplete#enable()
 
-if has("gui_macvim")
-    let macvim_hig_shift_movement = 1
-    set guioptions=egmt
-    set guifont=Fantasque\ Sans\ Mono:h18
-    set guitablabel=%>%f%M
-else
-    set mouse=a
-endif
-
-set ts=4
-set sts=4
-set sw=4
+set ts=2
+set sts=2
+set sw=2
 set expandtab
 " automatically CD to directory of file being edited
 " helpful with file path autocompletion
@@ -92,11 +83,11 @@ autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
 autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
 autocmd FileType python set omnifunc=python3complete#Complete
 autocmd BufNewFile,BufRead *.js setlocal filetype=javascript omnifunc=javascriptcomplete#CompleteJS
-autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx omnifunc=javascriptcomplete#CompleteJS
-autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript omnifunc=javascriptcomplete#CompleteJS
+" autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx omnifunc=javascriptcomplete#CompleteJS
+autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript omnifunc=javascriptcomplete#CompleteJS
 " vvv for some reason checking doesn't happen right away without this
 autocmd BufWritePre *.ts,*.tsx SyntasticCheck
-autocmd BufWritePre *.ts,*.tsx TsuGeterr
+" autocmd BufWritePre *.ts,*.tsx TsuGeterr
 autocmd BufNewFile,BufRead *.md setlocal filetype=markdown spell
 autocmd BufNewFile,BufRead .eslintrc setlocal filetype=json
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>ja :call JSXEncloseReturn()<CR>
@@ -173,8 +164,28 @@ nnoremap <C-n> :call NumberToggle()<cr>
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
-vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
-map <leader>c :CoffeeCompile<CR>
+function! RunTsuGeterr ()
+  echo "Compiling..."
+
+  let quickfix_list = tsuquyomi#createFixlist()
+
+  call setqflist(quickfix_list, 'r')
+  if len(quickfix_list) > 0
+    cwindow
+  else
+    echo "Lookin' gooood B)"
+    cclose
+  endif
+
+endfunction
+
+autocmd BufNewFile,BufRead *.ts,*.tsx nnoremap <Leader>t :call RunTsuGeterr()<CR>
+
+set autoread
+" autocmd BufNewFile,BufRead *.ts,*.tsx nnoremap <Leader>f ! tslint --fix % >/dev/null<CR>
+au VimEnter *.ts,*.tsx autocmd BufWritePost *.ts,*.tsx :checktime
+
+" :nnoremap <Leader>f :
 
 set titlestring=%M%t
 
@@ -210,6 +221,7 @@ let g:syntastic_mode_map={ 'mode': 'active',
 
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['tslint']
+let g:syntastic_typescript_tslint_args = '--fix'
 
 let g:syntastic_scss_checkers = ['scss-lint']
 
@@ -228,46 +240,6 @@ set statusline+=%*
 
 set shell=/bin/zsh
 
-
-
-" rspec mappings
-map <Leader>p :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>r :call RunLastSpec()<CR>
-
-function! RunCurrentSpecFile()
-  if InSpecFile()
-    let l:command = "s %"
-    call SetLastSpecCommand(l:command)
-    call RunSpecs(l:command)
-  endif
-endfunction
-
-function! RunNearestSpec()
-  if InSpecFile()
-    let l:command = "s %:" . line(".")
-    call SetLastSpecCommand(l:command)
-    call RunSpecs(l:command)
-  endif
-endfunction
-
-function! RunLastSpec()
-  if exists("t:last_spec_command")
-    call RunSpecs(t:last_spec_command)
-  endif
-endfunction
-
-function! InSpecFile()
-  return match(expand("%"), "_spec.rb$") != -1
-endfunction
-
-function! SetLastSpecCommand(command)
-  let t:last_spec_command = a:command
-endfunction
-
-function! RunSpecs(command)
-  execute ":w\|!" . a:command
-endfunction
 
 command! -nargs=? EFC call EditFilesContaining(<q-args>)
 
@@ -434,8 +406,28 @@ set tags=.ctags
 " Hide the nearly useless banner on the file explorer
 let g:netrw_banner = 0
 " Open files in previous window
-let g:netrw_browse_split = 4
+" let g:netrw_browse_split = 4
 " Set size as % of current window
 let g:netrw_winsize = 12
 " Use tree style
 let g:netrw_liststyle = 3
+
+function! CreateReactComponentFile()
+  let l:filename = input("please enter filename: ")
+  execute 'silent !cp /Users/patrick.canfield/Code/templates/ReactComponent.tsx ' . b:netrw_curdir.'/'.l:filename
+  redraw!
+endf
+
+
+" don't underline mispelled words
+hi SpellBad gui=none
+autocmd BufNewFile,BufRead *.md hi SpellBad gui=undercurl
+
+if has("gui_macvim")
+    let macvim_hig_shift_movement = 1
+    set guioptions=egmt
+    set guifont=Fantasque\ Sans\ Mono:h18
+    set guitablabel=%>%f%M
+else
+    set mouse=a
+endif

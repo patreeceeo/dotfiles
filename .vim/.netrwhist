@@ -1,4 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/patrick.canfield/Code/pink-panther/app/scripts/navigation'
-let g:netrw_dirhist_2='/Users/patrick.canfield/Code/pink-panther/app/scripts/navigation/controllers'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/patrick.canfield/Code/resources-ui/src/app/components/HeaderAndFooter/Advantage'
+let g:netrw_dirhist_2='/Users/patrick.canfield/Code/resources-ui/src/app/components/HeaderAndFooter'
+let g:netrw_dirhist_3='/Users/patrick.canfield/Code/resources-ui/src/app/components/HeaderAndFooter/Engage'
+let g:netrw_dirhist_4='/Users/patrick.canfield/Code/resources-ui/node_modules/@types/react'
+let g:netrw_dirhist_5='/Users/patrick.canfield/Code/resources-ui/conf/webpack'
