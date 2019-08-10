@@ -18,6 +18,8 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+nvm use --lts
+
 add_node_bin_to_path
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
