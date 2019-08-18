@@ -83,11 +83,11 @@ autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
 autocmd BufNewFile,BufRead *.rb,*.rake abbreviate <buffer> pry binding.pry
 autocmd FileType python set omnifunc=python3complete#Complete
 autocmd BufNewFile,BufRead *.js setlocal filetype=javascript omnifunc=javascriptcomplete#CompleteJS
-" autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx omnifunc=javascriptcomplete#CompleteJS
-autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript omnifunc=javascriptcomplete#CompleteJS
+autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx omnifunc=javascriptcomplete#CompleteJS
+autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript omnifunc=javascriptcomplete#CompleteJS
 " vvv for some reason checking doesn't happen right away without this
 autocmd BufWritePre *.ts,*.tsx SyntasticCheck
-" autocmd BufWritePre *.ts,*.tsx TsuGeterr
+autocmd BufWritePost *.ts,*.tsx call RunTsuGeterr()
 autocmd BufNewFile,BufRead *.md setlocal filetype=markdown spell
 autocmd BufNewFile,BufRead .eslintrc setlocal filetype=json
 autocmd BufNewFile,BufRead *.js,*.jsx nnoremap <leader>ja :call JSXEncloseReturn()<CR>
@@ -173,7 +173,7 @@ function! RunTsuGeterr ()
   if len(quickfix_list) > 0
     cwindow
   else
-    echo "Lookin' gooood B)"
+    echo "No type errors! 🎉"
     cclose
   endif
 

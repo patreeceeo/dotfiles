@@ -46,6 +46,9 @@ module.exports = {
     "jasmine": true,
     "protractor": true
   },
+  "parserOptions": {
+    "ecmaVersion": "2017"
+  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended"
