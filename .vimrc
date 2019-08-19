@@ -431,3 +431,7 @@ if has("gui_macvim")
 else
     set mouse=a
 endif
+
+set statusline+=%l\:%c
+" don't automatically resize windows
+set noequalalways
