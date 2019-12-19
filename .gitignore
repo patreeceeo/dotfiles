@@ -3,6 +3,7 @@
 *nohup.out
 .vim/.netrwhist
 .vim/plugged
+.config/nvim/plugged
 **/node_modules
 .config/hub
 

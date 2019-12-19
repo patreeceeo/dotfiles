@@ -23,7 +23,7 @@ NODE_PROMPT_SYMBOL="%{$fg_bold[green]%}⬢ node%{$reset_color%}"
 # If inside a Git repository, print its branch and state
 git_prompt_string() {
   local git_where="$(parse_git_branch)"
-  [ -n "$git_where" ] && echo "$GROUP_OPEN$GIT_PROMPT_SYMBOL$(parse_git_state) %{$fg[yellow]%}[$(truncate_string ${git_where#(refs/heads/|tags/)})]%{$reset_color%}$GROUP_CLOSE"
+  [ -n "$git_where" ] && echo "$GROUP_OPEN$GIT_PROMPT_SYMBOL$(parse_git_state) %{$fg[yellow]%}[$(truncate_string ${git_where#(refs/heads/|tags/)} 8)]%{$reset_color%}$GROUP_CLOSE"
 }
 
 nvm_prompt_string() {

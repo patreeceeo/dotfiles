@@ -1,6 +1,7 @@
 
 """ Begin: Configure Vim-Plug """
 call plug#begin('~/.vim/plugged')
+Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'morhetz/gruvbox'
 Plug 'elzr/vim-json'
 Plug 'tpope/vim-commentary'
@@ -23,6 +24,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'Quramy/tsuquyomi'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'wavded/vim-stylus'
+Plug 'mfukar/robotframework-vim'
 
 call plug#end()
 """ End: Configure Vim-Plug """

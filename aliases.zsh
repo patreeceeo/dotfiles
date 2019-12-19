@@ -11,12 +11,12 @@ function _function() {
 
 _alias 'rc'    "source $HOME/.zshrc"
 
-function vim () {
-  nohup mvim $1 $2 $3 > /dev/null
+function gvim () {
+  nohup /Applications/VimR.app/Contents/MacOS/VimR $1 $2 $3 > /dev/null &
 }
 _function vim
 
-_alias ll    'colorls -lA --sd'
+_alias ll    'ls -lA'
 _alias cat   'ccat'
 
 _alias ga    'git add -A .'
@@ -163,8 +163,8 @@ parse_git_state() {
 }
 
 truncate_string() {
-  if [ ${#1} -gt 7 ]; then
-    echo "${1[0,10]}…"
+  if [ ${#1} -gt $2 ]; then
+    echo "${1[0,$2]}…"
   else
     echo $1
   fi
