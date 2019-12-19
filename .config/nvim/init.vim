@@ -11,7 +11,9 @@ Plug 'scrooloose/syntastic'
 Plug 'Shougo/deoplete.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+" The following syntax plugin doesn't get confused by
+" template tags like 'peitalin/vim-jsx-typescript'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mfukar/robotframework-vim'
 
 Plug 'autozimu/LanguageClient-neovim', {
