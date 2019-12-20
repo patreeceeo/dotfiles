@@ -389,13 +389,6 @@ let g:netrw_winsize = 12
 " Use tree style
 let g:netrw_liststyle = 3
 
-function! CreateReactComponentFile()
-  let l:filename = input("please enter filename: ")
-  execute 'silent !cp /Users/patrick.canfield/Code/templates/ReactComponent.tsx ' . b:netrw_curdir.'/'.l:filename
-  redraw!
-endf
-
-
 " don't underline mispelled words
 hi SpellBad gui=none
 autocmd BufNewFile,BufRead *.md hi SpellBad gui=undercurl
