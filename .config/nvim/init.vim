@@ -27,6 +27,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mfukar/robotframework-vim'
 
 " Note: VimR 0.29 crashes because of coc.nvim
+" Note: Use `:CocInstall <name of language server>`
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "{{{
   " You will have bad experience for diagnostic messages when it's default 4000.
   set updatetime=300
