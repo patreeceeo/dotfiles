@@ -2,15 +2,22 @@
 """ Begin: Configure Vim-Plug """
 call plug#begin('~/.config/nvim/plugged')
 Plug 'morhetz/gruvbox'
-" TODO conditionally use colorscheme if in GUI?
-"Plug 'patreeceeo/vim-colors-blueprint' "{{{
-"  set rtp+=~/.config/nvim/plugged/vim-colors-blueprint
-"  set termguicolors
-"  colorscheme blueprint
-""}}}
+if match(&runtimepath, 'gruvbox')
+  colorscheme gruvbox
+endif
+"Plug 'patreeceeo/vim-colors-blueprint'
 Plug 'vim-airline/vim-airline'
 " Some day, try Shougo/denite.nvim instead of ctrlp
 Plug 'ctrlpvim/ctrlp.vim'
+if match(&runtimepath, 'ctrlp.vim')
+  let g:ctrlp_working_path_mode = 'ra'
+
+  if executable('rg')
+    set grepprg=rg\ --color=never
+    let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+    let g:ctrlp_use_caching = 0
+  endif
+endif
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'elzr/vim-json'
 Plug 'tpope/vim-commentary'
@@ -18,35 +25,40 @@ Plug 'tpope/vim-surround'
 Plug 'rhowardiv/nginx-vim-syntax'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
-" rhubarb depends on fugitive
-Plug 'tpope/vim-rhubarb'
+if match(&runtimepath, 'vim-fugitive')
+  " rhubarb depends on fugitive
+  Plug 'tpope/vim-rhubarb'
+endif
 Plug 'leafgarland/typescript-vim'
 " The following syntax plugin doesn't get confused by
 " template tags like 'peitalin/vim-jsx-typescript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mfukar/robotframework-vim'
+Plug 'chrisbra/Colorizer'
 
 " Note: VimR 0.29 crashes because of coc.nvim
 " Note: Use `:CocInstall <name of language server>`
-Plug 'neoclide/coc.nvim', {'branch': 'release'} "{{{
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+if match(&runtimepath, 'coc.nvim')
   " You will have bad experience for diagnostic messages when it's default 4000.
   set updatetime=300
-"}}}
-" Plug 'Shougo/deoplete.nvim'
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+  endfunction
 
-" " (Optional) Multi-entry selection UI.
-" Plug 'junegunn/fzf'
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+
+  "Close preview window when completion is done.
+  autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+endif
 
 call plug#end()
 """ End: Configure Vim-Plug """
 
-" call deoplete#enable()
-
-colorscheme gruvbox
 
 set ts=2
 set sts=2
@@ -370,20 +382,6 @@ hi tsxEqual guifg=#2974a1
 " green
 hi tsxAttrib guifg=#1BD1C1
 
-" Tell vim-markdown-preview to use Github-flavored markdown
-" let vim_markdown_preview_github=1
-
-function! OpenEnclosingFolder()
-  let command = input("command: ")
-  execute command expand('%:p:h')
-endfunction
-
-nnoremap <Leader>. :call OpenEnclosingFolder()<CR>
-
-" command! -nargs=0 DotE call OpenEnclosingFolder('e')
-" command! -nargs=0 DotVS call OpenEnclosingFolder('vs')
-" command! -nargs=0 DotSP call OpenEnclosingFolder('sp')
-
 " Tell ctags to load from the current directory
 set tags=.ctags
 
@@ -400,6 +398,16 @@ let g:netrw_liststyle = 3
 hi SpellBad gui=none
 autocmd BufNewFile,BufRead *.md hi SpellBad gui=undercurl
 
+" don't automatically resize windows
+set noequalalways
+
+" Required for operations modifying multiple buffers like rename.
+" Also required by coc.nvim?
+set hidden
+
+" Neovim Python provider
+let g:python3_host_prog='/usr/local/bin/python3'
+
 if has("gui_macvim")
     let macvim_hig_shift_movement = 1
     set guioptions=egmt
@@ -408,52 +416,3 @@ if has("gui_macvim")
 else
     set mouse=a
 endif
-
-set statusline+=%l\:%c
-" don't automatically resize windows
-set noequalalways
-
-" Required for operations modifying multiple buffers like rename.
-set hidden
-
-let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'typescript': ['javascript-typescript-stdio'],
-    \ 'typescript.tsx': ['javascript-typescript-stdio'],
-    \ }
-
-let g:LanguageClient_rootMarkers = {
-    \ 'typescript': ['tsconfig.json'],
-    \ 'typescript.tsx': ['tsconfig.json'],
-    \ }
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> rn :call LanguageClient#textDocument_rename()<CR>
-
-let g:python3_host_prog='/usr/local/bin/python3'
-
-let g:ctrlp_working_path_mode = 'ra'
-
-if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
-endif
-
-" === Coc.nvim === "
-" use <tab> for trigger completion and navigate to next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-"Close preview window when completion is done.
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
