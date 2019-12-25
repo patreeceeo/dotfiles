@@ -145,7 +145,7 @@ autocmd BufNewFile,BufRead *.md setlocal filetype=markdown spell
 autocmd BufNewFile,BufRead .eslintrc setlocal filetype=json
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
-autocmd VimEnter *.ts,*.tsx autocmd BufWritePost *.ts,*.tsx :checktime
+autocmd BufWrite *.ts,*.tsx CocCommand prettier.formatFile
 
 " Mappings
 " ========
@@ -208,8 +208,6 @@ set tags=.ctags
 
 " Hide the nearly useless banner on the file explorer
 let g:netrw_banner = 0
-" Open files in previous window
-" let g:netrw_browse_split = 4
 " Set size as % of current window
 let g:netrw_winsize = 12
 " Use tree style
