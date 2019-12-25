@@ -1,4 +1,3 @@
-:
 """ Begin: Configure Vim-Plug """
 call plug#begin('~/.config/nvim/plugged')
 Plug 'thaerkh/vim-indentguides'
