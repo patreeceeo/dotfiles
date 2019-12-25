@@ -3,22 +3,9 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'patreeceeo/vim-colors-blueprint'
-if match(&runtimepath, 'vim-colors-blueprint')
-  set termguicolors
-  colorscheme blueprint
-endif
 Plug 'vim-airline/vim-airline'
 " Some day, try Shougo/denite.nvim instead of ctrlp
 Plug 'ctrlpvim/ctrlp.vim'
-if match(&runtimepath, 'ctrlp.vim')
-  let g:ctrlp_working_path_mode = 'ra'
-
-  if executable('rg')
-    set grepprg=rg\ --color=never
-    let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-    let g:ctrlp_use_caching = 0
-  endif
-endif
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'elzr/vim-json'
 Plug 'tpope/vim-commentary'
@@ -83,6 +70,24 @@ endif
 call plug#end()
 """ End: Configure Vim-Plug """
 
+if match(&runtimepath, 'gruvbox')
+  set termguicolors
+  set background=dark
+  colorscheme gruvbox
+  let g:gruvbox_italic = 1
+  let g:gruvbox_contrast_dark = 'soft'
+endif
+
+if match(&runtimepath, 'ctrlp.vim')
+  let g:ctrlp_working_path_mode = 'ra'
+
+  if executable('rg')
+    set grepprg=rg\ --color=never
+    let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+    let g:ctrlp_use_caching = 0
+  endif
+endif
+
 set ts=2
 set sts=2
 set sw=2
@@ -94,7 +99,6 @@ set expandtab
 
 syntax on
 set nospell
-set background=dark
 filetype on
 filetype plugin indent on
 set nu
@@ -145,6 +149,7 @@ autocmd BufNewFile,BufRead *.hbs setlocal filetype=html
 autocmd BufNewFile,BufRead *.md setlocal filetype=markdown spell
 autocmd BufNewFile,BufRead .eslintrc setlocal filetype=json
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
+autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 autocmd VimEnter *.ts,*.tsx autocmd BufWritePost *.ts,*.tsx :checktime
 
 " Mappings
