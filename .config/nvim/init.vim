@@ -15,26 +15,6 @@ if match(&runtimepath, 'vim-commentary')
 endif
 Plug 'tpope/vim-surround'
 Plug 'rhowardiv/nginx-vim-syntax'
-Plug 'scrooloose/syntastic'
-if match(&runtimepath, 'syntastic')
-  let g:syntastic_mode_map={ 'mode': 'active',
-                       \ 'active_filetypes': [],
-                       \ 'passive_filetypes': ['html'] }
-
-  let g:syntastic_javascript_checkers = ['eslint']
-  let g:syntastic_typescript_checkers = ['tslint']
-  let g:syntastic_typescript_tslint_args = '--fix'
-
-  let g:syntastic_scss_checkers = ['scss-lint']
-
-  let g:syntastic_typescript_tsc_fname = ''
-
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 1
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_check_on_wq = 0
-  let g:syntastic_loc_list_height = 3
-endif
 Plug 'tpope/vim-fugitive'
 if match(&runtimepath, 'vim-fugitive')
   " rhubarb depends on fugitive
