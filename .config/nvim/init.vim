@@ -208,3 +208,6 @@ if has("gui_macvim")
 else
     set mouse=a
 endif
+
+" So I can see my terminal background
+hi Normal guibg=none
