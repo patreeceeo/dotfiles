@@ -1,4 +1,4 @@
-
+:
 """ Begin: Configure Vim-Plug """
 call plug#begin('~/.config/nvim/plugged')
 Plug 'morhetz/gruvbox'
@@ -92,11 +92,6 @@ set ts=2
 set sts=2
 set sw=2
 set expandtab
-" automatically CD to directory of file being edited
-" helpful with file path autocompletion
-" and editing sibling files
-" set autochdir
-
 syntax on
 set nospell
 filetype on
