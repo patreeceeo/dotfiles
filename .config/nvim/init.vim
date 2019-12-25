@@ -106,6 +106,8 @@ set noequalalways
 set shell=/bin/zsh
 " Neovim Python provider
 let g:python3_host_prog='/usr/local/bin/python3'
+" Automatically yank to system clipboard in addition to Vim clipboard
+set clipboard+=unnamedplus
 
 " Required for operations modifying multiple buffers like rename.
 " Also required by coc.nvim?
