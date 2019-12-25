@@ -1,8 +1,10 @@
 :
 """ Begin: Configure Vim-Plug """
 call plug#begin('~/.config/nvim/plugged')
+Plug 'thaerkh/vim-indentguides'
 Plug 'morhetz/gruvbox'
 Plug 'patreeceeo/vim-colors-blueprint'
+Plug 'arzg/vim-oldbook8'
 Plug 'vim-airline/vim-airline'
 " Some day, try Shougo/denite.nvim instead of ctrlp
 Plug 'ctrlpvim/ctrlp.vim'
