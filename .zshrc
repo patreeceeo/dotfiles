@@ -25,22 +25,6 @@ add_node_bin_to_path
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-style_white_on_magenta="\e[48;5;57m\e[97m"
-style_black_on_aqua="\e[48;5;42m\e[30m"
-style_reset="\e[0m"
-
-echo $style_white_on_magenta
-echo "                   "
-echo " Ego is the enemy. "
-echo "                   "
-echo $style_reset
-echo $style_black_on_aqua
-echo "                          "
-echo " The obstacle is the way. "
-echo "                          "
-echo $style_reset
-
-
 source ~/dotfiles/git-prompt.zsh
 
 

@@ -89,11 +89,6 @@ function install_pre_commit_hooks() {
 function do_git_stuff() {
   if [[ -a '.git' ]]; then
     git pull --ff-only
-    echo ""
-    echo "### Git Config ###"
-    git config --include --list
-    echo ""
-    git log -n 1
   fi
 }
 

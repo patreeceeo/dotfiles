@@ -1,0 +1,7 @@
+{
+  "resources-ui": [
+    ["cd ~/Code/resources-ui && nvim"],
+    [["cd ~/Code/resources-ui && jest --notify --watch"], ["cd ~/Code/resources-ui"] ]
+  ]
+}
+

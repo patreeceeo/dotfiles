@@ -151,9 +151,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [
-   'hyper-background-image'
-  ],
+  plugins: ['hyper-background-image', 'hyperlayout'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
