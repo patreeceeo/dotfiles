@@ -2,13 +2,6 @@
 # Executes commands at the start of an interactive session.
 #
 
-
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-  zstyle ':prezto:module:git:info' verbose 'yes'
-fi
-
 source "$HOME/aliases.zsh"
 
 auto_activate_venv
@@ -25,7 +18,7 @@ add_node_bin_to_path
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-source ~/dotfiles/git-prompt.zsh
+source ~/dotfiles/prompt.zsh
 
 
 ### SSH Stuff ###

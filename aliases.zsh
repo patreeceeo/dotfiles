@@ -1,12 +1,10 @@
 CODE_HOME=$HOME/codez
 
 function _alias() {
-  echo "$1 \t\t=> $2"
   alias $1=$2
 }
 
 function _function() {
-  echo "$(which $1)"
 }
 
 _alias 'rc'    "source $HOME/.zshrc"
