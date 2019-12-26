@@ -3,11 +3,18 @@
 setopt prompt_subst
 autoload -U colors && colors # Enable colors in prompt
 
-NODE_PROMPT_SYMBOL="%{$fg_bold[green]%}⬢ %{$reset_color%}"
+NODE_PROMPT_SYMBOL=$'\uf898'
+
+node_bin_id() {
+  path=$(npm bin)
+  parts=($(echo $path | /usr/bin/sed 's/\// /g'))
+  length=${#a[@]}
+  echo $parts[-3]
+}
 
 node_prompt_string() {
   if which nvm &> /dev/null; then
-    echo "$NODE_PROMPT_SYMBOL$(node --version)"
+    echo "%{$fg_bold[green]%}$NODE_PROMPT_SYMBOL $(node --version)($(node_bin_id))%{$reset_color%}"
   fi
 }
 
