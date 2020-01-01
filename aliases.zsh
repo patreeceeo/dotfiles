@@ -65,6 +65,14 @@ function auto_activate_venv () {
   fi
 }
 
+# only enter a  Pipenv shell if there's a Pipfile and
+# we're not already in one.
+function auto_activate_pipenv () {
+  if [[ (-a "$(pwd)/Pipfile") && $(is_function deactivate) == "" ]]; then
+    pipenv shell
+  fi
+}
+
 function remove_node_bin_from_path () {
   path=("${(@)path:#$(npm bin)}")
 }
@@ -85,7 +93,8 @@ function install_pre_commit_hooks() {
 }
 
 function do_git_stuff() {
-  if [[ -a '.git' ]]; then
+  num_behind=$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')
+  if [[ -a '.git' && $num_behind -gt 0 ]]; then
     git pull --ff-only
   fi
 }
@@ -93,7 +102,7 @@ function do_git_stuff() {
 function cd () {
   remove_node_bin_from_path
   builtin cd $1
-  auto_activate_venv
+  auto_activate_pipenv
   add_node_bin_to_path
   install_pre_commit_hooks
   do_git_stuff
