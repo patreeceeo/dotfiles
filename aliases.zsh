@@ -173,8 +173,7 @@ truncate_string() {
 }
 
 function jira_ticket() {
-  local git_where="$(parse_git_branch)"
-  [ -n "$git_where" ] && echo ${git_where#(refs/heads/|tags/)} | grep '^[[:alpha:]][[:alpha:]]-[[:digit:]][[:digit:]]' -o | read ticket; echo "https://jira.rallyhealth.com/browse/$ticket"
+  open "https://jira.rallyhealth.com/browse/$1"
 }
 
 function test_engage() {
