@@ -1,10 +1,10 @@
 """ Begin: Configure Vim-Plug """
 call plug#begin('~/.config/nvim/plugged')
+Plug 'vim-airline/vim-airline'
 Plug 'thaerkh/vim-indentguides'
 Plug 'morhetz/gruvbox'
 Plug 'patreeceeo/vim-colors-blueprint'
 Plug 'arzg/vim-oldbook8'
-Plug 'vim-airline/vim-airline'
 " Some day, try Shougo/denite.nvim instead of ctrlp
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
@@ -51,12 +51,20 @@ endif
 call plug#end()
 """ End: Configure Vim-Plug """
 
+if match(&runtimepath, 'vim-airline')
+  let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+  let g:airline_section_b='' " don't show Git branch
+  let g:airline#extensions#tabline#enabled = 0
+  let g:airline#extensions#tabline#show_buffers = 1
+endif
+
+
 if match(&runtimepath, 'gruvbox')
   set termguicolors
   set background=dark
   colorscheme gruvbox
-  let g:gruvbox_italic = 1
-  let g:gruvbox_contrast_dark = 'soft'
+  " let g:gruvbox_italic = 1
+  " let g:gruvbox_contrast_dark = 'soft'
 endif
 
 if match(&runtimepath, 'ctrlp.vim')
