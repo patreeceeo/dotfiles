@@ -4,5 +4,5 @@
 .config/nvim/plugged
 **/node_modules
 .config/hub
-.config/configstore/update-notifier-npm.json
+.config/configstore
 .config/coc
