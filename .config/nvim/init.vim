@@ -44,6 +44,8 @@ if match(&runtimepath, 'coc.nvim')
         \ <SID>check_back_space() ? "\<TAB>" :
         \ coc#refresh()
 
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
   "Close preview window when completion is done.
   autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 endif
@@ -88,6 +90,7 @@ filetype plugin indent on
 set nu
 set title
 set wildmenu
+set relativenumber
 set wildmode=list:longest,full
 set autoindent
 set smartindent
@@ -138,24 +141,6 @@ autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 autocmd BufWrite *.ts,*.tsx CocCommand prettier.formatFile
 
-" Mappings
-" ========
-
-" This following was inspired by:
-" http://jeetworks.org/node/89
-"
-" tl;dr
-"
-" When you get used to not using the arrow keys to move around make them do
-" something else useful.
-
-nnoremap <S-Down>    :m+<CR>
-nnoremap <S-Up>      :m-2<CR>
-inoremap <S-Down>    <Esc>:m+<CR>==gi
-inoremap <S-Up>      <Esc>:m-2<CR>==gi
-vnoremap <S-Down>    :m'>+<CR>gv=gv
-vnoremap <S-Up>      :m-2<CR>gv=gv
-
 nnoremap <S-Left>      << 
 nnoremap <S-Right>     >>
 inoremap <S-Left>      <Esc><<i 
@@ -165,12 +150,8 @@ vnoremap <S-Right>     >
 vnoremap <S-Tab>       >
 vnoremap <S-Tab>     <
 
-nnoremap <C-H>    :tabprevious<CR>
-nnoremap <C-L>    :tabnext<CR>
-nnoremap <S-C-H>  :tabprevious
-nnoremap <S-C-L>  :tabnext
-nnoremap <C-J>    :tabfirst<CR>
-nnoremap <C-K>    :tablast<CR>
+nmap <C-H>     :tabprevious<CR>
+nmap <C-L>     :tabnext<CR>
 
 set foldmethod=indent
 set foldlevel=99

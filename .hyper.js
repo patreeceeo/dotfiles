@@ -54,14 +54,10 @@ module.exports = {
     selectionColor: 'rgba(248,28,229,0.3)',
 
     // border color (window, tabs)
-    borderColor: '',
+    borderColor: 'LightSlateGrey',
 
     // custom CSS to embed in the main window
-    css: `
-      .tab_tab.tab_active .tab_text {
-        border-bottom: 1px solid LightSlateGrey;
-      }
-    `,
+    css: ``,
 
     // custom CSS to embed in the terminal window
     termCSS: ``,
