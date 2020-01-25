@@ -1,9 +1,8 @@
-.*.sw*
-.vim/view/*
-*nohup.out
 .vim/.netrwhist
+.config/nvim/.netrwhist
 .vim/plugged
 .config/nvim/plugged
 **/node_modules
 .config/hub
-
+.config/configstore/update-notifier-npm.json
+.config/coc
