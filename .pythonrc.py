@@ -41,7 +41,6 @@ class Completer(object):
 
 completer = Completer()
 
-WELCOME='Helloooooooo'
 # Color Support
 class TermColors(dict):
     """Gives easy access to ANSI color codes. Attempts to fall back to no color
@@ -87,11 +86,11 @@ sys.ps2 = '%s... %s' % (_c['Red'], _c['Normal'])
 # Enable Pretty Printing for stdout
 def my_displayhook(value):
     if value is not None:
-        try:
-            import __builtin__
-            __builtin__._ = value
-        except ImportError:
-            __builtins__._ = value
+        # try:
+        #     import __builtin__
+        #     __builtin__._ = value
+        # except ImportError:
+        #     __builtins__._ = value
 
         import pprint
         pprint.pprint(value)
@@ -113,7 +112,7 @@ from code import InteractiveConsole
 del sys
 
 console = InteractiveConsole(locals=locals())
-console.interact(banner=WELCOME)
+console.interact(banner="~pythonrc.py: You are a magical creature.")
 
 # Exit the Python shell on exiting the InteractiveConsole
 import sys

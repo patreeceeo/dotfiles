@@ -107,7 +107,7 @@
         "sysPrefix": "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7",
         "fileHash": "8d9a6d4af366cd0ebf1f6860b4ff4c42e9609d84dd93f6eed2df43e64f798a129abc5eaae421771a43c301b2176ceffc351e8f1b0507e2d2041be905da38239c"
       },
-      "expiry": 1577294048846
+      "expiry": 1583206408653
     },
     "/usr/local/bin/python2.v3": {
       "data": {
@@ -132,7 +132,7 @@
         "sysPrefix": "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7",
         "fileHash": "5a98ea042cd3bad9fd12542cc382933adc23ae6e43078288a1b917552adda5ea94db3ec5c518090a48e9d7f47a004d9c7f9746e2ebb5261ecda35b090607563a"
       },
-      "expiry": 1577294048846
+      "expiry": 1583206408652
     },
     "/usr/local/bin/python2.7.v3": {
       "data": {
@@ -157,7 +157,7 @@
         "sysPrefix": "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7",
         "fileHash": "0f60ba6c63a92ec893c67c1ea4fcd75c5771831ee7bdea3eec4fb70ec1b176658855c383ae8701e454797cb3b7188479609a34081a2c3ba99d278f247cc044a1"
       },
-      "expiry": 1577294048845
+      "expiry": 1583206408659
     },
     "/usr/local/opt/python@2/bin/python2.7.v3": {
       "data": {
@@ -182,12 +182,12 @@
         "sysPrefix": "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7",
         "fileHash": "5df6f5e43a91ee55de1b5358d79f87dc2c81bf3af4448b770a76aee0674d651afa51400db21828f165d470b38a766be85a72cc5a09c3fd1d928efe8bd793fd0f"
       },
-      "expiry": 1577294048731
+      "expiry": 1583206408690
     },
     "INTERPRETERS_CACHE_v3_CurrentPathService": [
       {
         "architecture": 3,
-        "path": "/usr/local/opt/python/bin/python3.7",
+        "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python3.7",
         "version": {
           "options": {
             "loose": false,
@@ -204,13 +204,13 @@
           "build": [],
           "version": "3.7.3-final"
         },
-        "sysPrefix": "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7",
-        "fileHash": "46c422763606dbe80b1b2412df54c030eb06408a767120a6ba2a2f96d960733ff60c97dad6f1fe435f577d291207caa27ed231ca8bc38a177b8ba1b359fd0f6d",
+        "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+        "fileHash": "7fa2afd29c1171f805d80a15f0c8f6c15aecafe6211344f0dfb7ff0c2bbf2b11e406bfdc6143b7de7df06deb34ff8f3c981224795691513241dd02904198d0f8",
         "type": "Unknown"
       },
       {
         "architecture": 3,
-        "path": "/usr/local/opt/python/bin/python3.7",
+        "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python3",
         "version": {
           "options": {
             "loose": false,
@@ -227,8 +227,8 @@
           "build": [],
           "version": "3.7.3-final"
         },
-        "sysPrefix": "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7",
-        "fileHash": "46c422763606dbe80b1b2412df54c030eb06408a767120a6ba2a2f96d960733ff60c97dad6f1fe435f577d291207caa27ed231ca8bc38a177b8ba1b359fd0f6d",
+        "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+        "fileHash": "7550b63ee380478788c1647c9cdee71a8b821fccccf2da30db2dfd92a02239e41e9c16f719f87764a51c434da2b3134cd0ee574ba7dd32d92b6a94f33c2c1d76",
         "type": "Unknown"
       },
       {
@@ -256,54 +256,54 @@
       },
       {
         "architecture": 3,
-        "path": "/usr/local/opt/python@2/bin/python2.7",
+        "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python",
         "version": {
           "options": {
             "loose": false,
             "includePrerelease": false
           },
           "loose": false,
-          "raw": "2.7.16-final",
-          "major": 2,
+          "raw": "3.7.3-final",
+          "major": 3,
           "minor": 7,
-          "patch": 16,
+          "patch": 3,
           "prerelease": [
             "final"
           ],
           "build": [],
-          "version": "2.7.16-final"
+          "version": "3.7.3-final"
         },
-        "sysPrefix": "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7",
-        "fileHash": "5df6f5e43a91ee55de1b5358d79f87dc2c81bf3af4448b770a76aee0674d651afa51400db21828f165d470b38a766be85a72cc5a09c3fd1d928efe8bd793fd0f",
+        "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+        "fileHash": "814b4b7d05e6334e290ac62820553f27fb3c41705f00358a801547bea58ebe476a4a4e9c8b25720241bf371c01b42639d4729c39332e1e07fe50e24e7263586d",
         "type": "Unknown"
       },
       {
         "architecture": 3,
-        "path": "/usr/local/opt/python@2/bin/python2.7",
+        "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python",
         "version": {
           "options": {
             "loose": false,
             "includePrerelease": false
           },
           "loose": false,
-          "raw": "2.7.16-final",
-          "major": 2,
+          "raw": "3.7.3-final",
+          "major": 3,
           "minor": 7,
-          "patch": 16,
+          "patch": 3,
           "prerelease": [
             "final"
           ],
           "build": [],
-          "version": "2.7.16-final"
+          "version": "3.7.3-final"
         },
-        "sysPrefix": "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7",
-        "fileHash": "5df6f5e43a91ee55de1b5358d79f87dc2c81bf3af4448b770a76aee0674d651afa51400db21828f165d470b38a766be85a72cc5a09c3fd1d928efe8bd793fd0f",
+        "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+        "fileHash": "814b4b7d05e6334e290ac62820553f27fb3c41705f00358a801547bea58ebe476a4a4e9c8b25720241bf371c01b42639d4729c39332e1e07fe50e24e7263586d",
         "type": "Unknown"
       }
     ],
     "InterpreterAutoSeletionRule-currentPath": {
       "architecture": 3,
-      "path": "/usr/local/opt/python/bin/python3.7",
+      "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python",
       "version": {
         "options": {
           "loose": false,
@@ -320,10 +320,9 @@
         "build": [],
         "version": "3.7.3-final"
       },
-      "sysPrefix": "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7",
-      "fileHash": "46c422763606dbe80b1b2412df54c030eb06408a767120a6ba2a2f96d960733ff60c97dad6f1fe435f577d291207caa27ed231ca8bc38a177b8ba1b359fd0f6d",
-      "type": "Unknown",
-      "cachedEntry": true
+      "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+      "fileHash": "814b4b7d05e6334e290ac62820553f27fb3c41705f00358a801547bea58ebe476a4a4e9c8b25720241bf371c01b42639d4729c39332e1e07fe50e24e7263586d",
+      "type": "Unknown"
     },
     "preferredGlobalPyInterpreter": {
       "architecture": 3,
@@ -400,9 +399,9 @@
           "version": "3.7.3-final"
         },
         "sysPrefix": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.7",
-        "fileHash": "d919d53cd63f464bdde51b1c411fcff4e7192ab196143a3325f9039678cc816c3796611fa3c97b4d80e316639a80b64ebd1ed55c63dd671f953d47a96d5ee388"
+        "fileHash": "d74eaa30605a7227c7dde7ed63d4e91ad687ec2948c111030bc3d7036df706035c4d9ec83fdea303b8c2dfe6a3db523ddb3e59a8ce669898f2a72ceadd8192fe"
       },
-      "expiry": 1577294048841
+      "expiry": 1583206410875
     },
     "/usr/bin/python2.v3": {
       "data": {
@@ -427,7 +426,7 @@
         "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
         "fileHash": "c841e17599dc358341b49adb2f2abcb2dc46d7b504d36de09c8caab1411cfdc3b2ae2ae9cf3ff933d40f13701226f2bed5475f21b79c8f130c24e684a3625be6"
       },
-      "expiry": 1577294048843
+      "expiry": 1583206408740
     },
     "/usr/bin/python2.7.v3": {
       "data": {
@@ -452,7 +451,7 @@
         "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
         "fileHash": "dece5812cfe4c35acd36dee427c89ade3f31247354f3019315c1a8d59356d1203e0e5894b01da1490ebf66760011ad359ade920f7318062a48452795934d722b"
       },
-      "expiry": 1577294048844
+      "expiry": 1583206408737
     },
     "/usr/bin/python.v3": {
       "data": {
@@ -477,11 +476,80 @@
         "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
         "fileHash": "20723913e68630abd2179e44a06ad06a290681f4c0682a9cf8a21137fc0f5818a7be26d5689322ecb126e96eb3b2ea2404852011340fe240da8ea0ef08acce88"
       },
-      "expiry": 1577294048844
+      "expiry": 1583206408739
     },
     "INTERPRETERS_CACHE_v3_KnownPathsService": [
       {
         "architecture": 3,
+        "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.3-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 3,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.3-final"
+        },
+        "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+        "fileHash": "814b4b7d05e6334e290ac62820553f27fb3c41705f00358a801547bea58ebe476a4a4e9c8b25720241bf371c01b42639d4729c39332e1e07fe50e24e7263586d",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.3-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 3,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.3-final"
+        },
+        "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+        "fileHash": "7550b63ee380478788c1647c9cdee71a8b821fccccf2da30db2dfd92a02239e41e9c16f719f87764a51c434da2b3134cd0ee574ba7dd32d92b6a94f33c2c1d76",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.3-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 3,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.3-final"
+        },
+        "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+        "fileHash": "7fa2afd29c1171f805d80a15f0c8f6c15aecafe6211344f0dfb7ff0c2bbf2b11e406bfdc6143b7de7df06deb34ff8f3c981224795691513241dd02904198d0f8",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
         "path": "/usr/local/bin/python",
         "version": {
           "options": {
@@ -547,52 +615,6 @@
         },
         "sysPrefix": "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7",
         "fileHash": "0f60ba6c63a92ec893c67c1ea4fcd75c5771831ee7bdea3eec4fb70ec1b176658855c383ae8701e454797cb3b7188479609a34081a2c3ba99d278f247cc044a1",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/local/bin/python3",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.3-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 3,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.3-final"
-        },
-        "sysPrefix": "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7",
-        "fileHash": "9d4f7e54e3dacf64b26badbc122c941c110ae84942e1771832dd77aa87f54cfce6c6bef253aae21042b7faccf6c9134f7598221461c72bcf75f23d46ebeba17a",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/local/bin/python3.7",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.3-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 3,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.3-final"
-        },
-        "sysPrefix": "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7",
-        "fileHash": "0b771e6bbb1f94d75207c93ef26501ff138a4cf12697e3fe1cab8361455c4ddb8a11f5bef464c7dd95d4e3cd5abb0b93f9505bf8e892aa3a6bb20a69f0569365",
         "type": "Unknown"
       },
       {
@@ -684,7 +706,7 @@
           "version": "3.7.3-final"
         },
         "sysPrefix": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.7",
-        "fileHash": "d919d53cd63f464bdde51b1c411fcff4e7192ab196143a3325f9039678cc816c3796611fa3c97b4d80e316639a80b64ebd1ed55c63dd671f953d47a96d5ee388",
+        "fileHash": "d74eaa30605a7227c7dde7ed63d4e91ad687ec2948c111030bc3d7036df706035c4d9ec83fdea303b8c2dfe6a3db523ddb3e59a8ce669898f2a72ceadd8192fe",
         "type": "Unknown"
       },
       {
@@ -754,52 +776,6 @@
         },
         "sysPrefix": "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7",
         "fileHash": "0f60ba6c63a92ec893c67c1ea4fcd75c5771831ee7bdea3eec4fb70ec1b176658855c383ae8701e454797cb3b7188479609a34081a2c3ba99d278f247cc044a1",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/local/bin/python3",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.3-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 3,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.3-final"
-        },
-        "sysPrefix": "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7",
-        "fileHash": "9d4f7e54e3dacf64b26badbc122c941c110ae84942e1771832dd77aa87f54cfce6c6bef253aae21042b7faccf6c9134f7598221461c72bcf75f23d46ebeba17a",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/local/bin/python3.7",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.3-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 3,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.3-final"
-        },
-        "sysPrefix": "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7",
-        "fileHash": "0b771e6bbb1f94d75207c93ef26501ff138a4cf12697e3fe1cab8361455c4ddb8a11f5bef464c7dd95d4e3cd5abb0b93f9505bf8e892aa3a6bb20a69f0569365",
         "type": "Unknown"
       },
       {
@@ -891,38 +867,44 @@
           "version": "3.7.3-final"
         },
         "sysPrefix": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.7",
-        "fileHash": "d919d53cd63f464bdde51b1c411fcff4e7192ab196143a3325f9039678cc816c3796611fa3c97b4d80e316639a80b64ebd1ed55c63dd671f953d47a96d5ee388",
+        "fileHash": "d74eaa30605a7227c7dde7ed63d4e91ad687ec2948c111030bc3d7036df706035c4d9ec83fdea303b8c2dfe6a3db523ddb3e59a8ce669898f2a72ceadd8192fe",
         "type": "Unknown"
       }
     ],
-    "PipEnvInformation": [],
+    "PipEnvInformation": [
+      {
+        "pythonPath": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python",
+        "workspaceFolder": "/Users/patrick.canfield/Downloads/showposter",
+        "envName": "showposter"
+      }
+    ],
     "/usr/bin/python.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 2.7.16 64-bit",
         "hash": "20723913e68630abd2179e44a06ad06a290681f4c0682a9cf8a21137fc0f5818a7be26d5689322ecb126e96eb3b2ea2404852011340fe240da8ea0ef08acce88-bef3799d098f5f3b16cc6ed4a745c037"
       },
-      "expiry": 1577294048884
+      "expiry": 1583103529096
     },
     "/usr/local/bin/python.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 2.7.16 64-bit",
         "hash": "8d9a6d4af366cd0ebf1f6860b4ff4c42e9609d84dd93f6eed2df43e64f798a129abc5eaae421771a43c301b2176ceffc351e8f1b0507e2d2041be905da38239c-ff7aee05ed0f2211538347e09db47dc7"
       },
-      "expiry": 1577294048885
+      "expiry": 1583103529100
     },
     "/usr/bin/python3.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 3.7.3 64-bit",
-        "hash": "d919d53cd63f464bdde51b1c411fcff4e7192ab196143a3325f9039678cc816c3796611fa3c97b4d80e316639a80b64ebd1ed55c63dd671f953d47a96d5ee388-435c9733561bf7d75ce5c3b8c1068f78"
+        "hash": "d74eaa30605a7227c7dde7ed63d4e91ad687ec2948c111030bc3d7036df706035c4d9ec83fdea303b8c2dfe6a3db523ddb3e59a8ce669898f2a72ceadd8192fe-93d637cfa1ce53fae40147e6de07c053"
       },
-      "expiry": 1577294048886
+      "expiry": 1583103529102
     },
     "/usr/local/opt/python@2/bin/python2.7.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 2.7.16 64-bit",
         "hash": "5df6f5e43a91ee55de1b5358d79f87dc2c81bf3af4448b770a76aee0674d651afa51400db21828f165d470b38a766be85a72cc5a09c3fd1d928efe8bd793fd0f-3f1b34de687b11a961f20f436c78734e"
       },
-      "expiry": 1577294048887
+      "expiry": 1583206409032
     },
     "/usr/local/bin/python3.interpreter.displayName.v7": {
       "data": {
@@ -940,7 +922,7 @@
     },
     "InterpreterAutoSeletionRule-system": {
       "architecture": 3,
-      "path": "/usr/local/opt/python/bin/python3.7",
+      "path": "/usr/bin/python3",
       "version": {
         "options": {
           "loose": false,
@@ -957,8 +939,8 @@
         "build": [],
         "version": "3.7.3-final"
       },
-      "sysPrefix": "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7",
-      "fileHash": "46c422763606dbe80b1b2412df54c030eb06408a767120a6ba2a2f96d960733ff60c97dad6f1fe435f577d291207caa27ed231ca8bc38a177b8ba1b359fd0f6d",
+      "sysPrefix": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.7",
+      "fileHash": "d74eaa30605a7227c7dde7ed63d4e91ad687ec2948c111030bc3d7036df706035c4d9ec83fdea303b8c2dfe6a3db523ddb3e59a8ce669898f2a72ceadd8192fe",
       "type": "Unknown",
       "cachedEntry": true,
       "displayName": "Python 3.7.3 64-bit"
@@ -991,7 +973,7 @@
           "displayName": "Python 2.7.16 64-bit"
         }
       },
-      "expiry": 1577294048930
+      "expiry": 1583103529122
     },
     "/usr/local/bin/python.interpreter.Details.v7": {
       "data": {
@@ -1021,11 +1003,11 @@
           "displayName": "Python 2.7.16 64-bit"
         }
       },
-      "expiry": 1577294048932
+      "expiry": 1583103529129
     },
     "/usr/bin/python3.interpreter.Details.v7": {
       "data": {
-        "fileHash": "d919d53cd63f464bdde51b1c411fcff4e7192ab196143a3325f9039678cc816c3796611fa3c97b4d80e316639a80b64ebd1ed55c63dd671f953d47a96d5ee388",
+        "fileHash": "d74eaa30605a7227c7dde7ed63d4e91ad687ec2948c111030bc3d7036df706035c4d9ec83fdea303b8c2dfe6a3db523ddb3e59a8ce669898f2a72ceadd8192fe",
         "info": {
           "architecture": 3,
           "path": "/usr/bin/python3",
@@ -1046,12 +1028,12 @@
             "version": "3.7.3-final"
           },
           "sysPrefix": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.7",
-          "fileHash": "d919d53cd63f464bdde51b1c411fcff4e7192ab196143a3325f9039678cc816c3796611fa3c97b4d80e316639a80b64ebd1ed55c63dd671f953d47a96d5ee388",
+          "fileHash": "d74eaa30605a7227c7dde7ed63d4e91ad687ec2948c111030bc3d7036df706035c4d9ec83fdea303b8c2dfe6a3db523ddb3e59a8ce669898f2a72ceadd8192fe",
           "type": "Unknown",
           "displayName": "Python 3.7.3 64-bit"
         }
       },
-      "expiry": 1577294048935
+      "expiry": 1583103529132
     },
     "/usr/local/opt/python@2/bin/python2.7.interpreter.Details.v7": {
       "data": {
@@ -1081,7 +1063,7 @@
           "displayName": "Python 2.7.16 64-bit"
         }
       },
-      "expiry": 1577294048937
+      "expiry": 1583206409053
     },
     "/usr/local/bin/python3.interpreter.Details.v7": {
       "data": {
@@ -1116,7 +1098,7 @@
     "ProposeLSBanner": false,
     "InterpreterAutoSeletionRule-cachedInterpreters": {
       "architecture": 3,
-      "path": "/usr/local/opt/python/bin/python3.7",
+      "path": "/usr/bin/python3",
       "version": {
         "options": {
           "loose": false,
@@ -1133,14 +1115,236 @@
         "build": [],
         "version": "3.7.3-final"
       },
-      "sysPrefix": "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7",
-      "fileHash": "46c422763606dbe80b1b2412df54c030eb06408a767120a6ba2a2f96d960733ff60c97dad6f1fe435f577d291207caa27ed231ca8bc38a177b8ba1b359fd0f6d",
+      "sysPrefix": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.7",
+      "fileHash": "d74eaa30605a7227c7dde7ed63d4e91ad687ec2948c111030bc3d7036df706035c4d9ec83fdea303b8c2dfe6a3db523ddb3e59a8ce669898f2a72ceadd8192fe",
       "type": "Unknown",
+      "cachedEntry": true,
       "displayName": "Python 3.7.3 64-bit"
+    },
+    "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python3.7.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.3-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 3,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.3-final"
+        },
+        "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+        "fileHash": "7fa2afd29c1171f805d80a15f0c8f6c15aecafe6211344f0dfb7ff0c2bbf2b11e406bfdc6143b7de7df06deb34ff8f3c981224795691513241dd02904198d0f8"
+      },
+      "expiry": 1583206408631
+    },
+    "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.3-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 3,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.3-final"
+        },
+        "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+        "fileHash": "7550b63ee380478788c1647c9cdee71a8b821fccccf2da30db2dfd92a02239e41e9c16f719f87764a51c434da2b3134cd0ee574ba7dd32d92b6a94f33c2c1d76"
+      },
+      "expiry": 1583206408629
+    },
+    "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.3-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 3,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.3-final"
+        },
+        "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+        "fileHash": "814b4b7d05e6334e290ac62820553f27fb3c41705f00358a801547bea58ebe476a4a4e9c8b25720241bf371c01b42639d4729c39332e1e07fe50e24e7263586d"
+      },
+      "expiry": 1583206408632
+    },
+    "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.3 64-bit ('showposter': pipenv)",
+        "hash": "814b4b7d05e6334e290ac62820553f27fb3c41705f00358a801547bea58ebe476a4a4e9c8b25720241bf371c01b42639d4729c39332e1e07fe50e24e7263586d-5fb98b7a3515f95e776cc8d42e61ab4c"
+      },
+      "expiry": 1583206409809
+    },
+    "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "814b4b7d05e6334e290ac62820553f27fb3c41705f00358a801547bea58ebe476a4a4e9c8b25720241bf371c01b42639d4729c39332e1e07fe50e24e7263586d",
+        "info": {
+          "architecture": 3,
+          "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.7.3-final",
+            "major": 3,
+            "minor": 7,
+            "patch": 3,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.7.3-final"
+          },
+          "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+          "fileHash": "814b4b7d05e6334e290ac62820553f27fb3c41705f00358a801547bea58ebe476a4a4e9c8b25720241bf371c01b42639d4729c39332e1e07fe50e24e7263586d",
+          "type": "PipEnv",
+          "pipEnvWorkspaceFolder": "/Users/patrick.canfield/Downloads/showposter",
+          "cachedEntry": true,
+          "envName": "showposter",
+          "displayName": "Python 3.7.3 64-bit ('showposter': pipenv)",
+          "__store": true
+        }
+      },
+      "expiry": 1583206409075
+    },
+    "InterpreterAutoSeletionRule-workspaceEnvs": {
+      "architecture": 3,
+      "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.3-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 3,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.3-final"
+      },
+      "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+      "fileHash": "814b4b7d05e6334e290ac62820553f27fb3c41705f00358a801547bea58ebe476a4a4e9c8b25720241bf371c01b42639d4729c39332e1e07fe50e24e7263586d",
+      "type": "PipEnv",
+      "pipEnvWorkspaceFolder": "/Users/patrick.canfield/Downloads/showposter"
     }
   },
   "coc-python|/Users/patrick.canfield/Code/test-repo-clone": {
     "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
     "INTERPRETERS_CACHE_v3_PipEnvService": []
+  },
+  "coc-python|/Users/patrick.canfield/Downloads/showposter": {
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:3c54255229cc756443f1e81d1411ed07": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService:3c54255229cc756443f1e81d1411ed07": [
+      {
+        "architecture": 3,
+        "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.3-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 3,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.3-final"
+        },
+        "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+        "fileHash": "814b4b7d05e6334e290ac62820553f27fb3c41705f00358a801547bea58ebe476a4a4e9c8b25720241bf371c01b42639d4729c39332e1e07fe50e24e7263586d",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/patrick.canfield/Downloads/showposter"
+      }
+    ],
+    "SelectedPythonPath": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python",
+    "autoSelectedWorkspacePythonInterpreter-/Users/patrick.canfield/Downloads/showposter": {
+      "architecture": 3,
+      "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.3-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 3,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.3-final"
+      },
+      "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+      "fileHash": "814b4b7d05e6334e290ac62820553f27fb3c41705f00358a801547bea58ebe476a4a4e9c8b25720241bf371c01b42639d4729c39332e1e07fe50e24e7263586d",
+      "type": "PipEnv",
+      "pipEnvWorkspaceFolder": "/Users/patrick.canfield/Downloads/showposter"
+    },
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.3-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 3,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.3-final"
+        },
+        "sysPrefix": "/Users/patrick.canfield/.local/share/virtualenvs/showposter-FGVn35tI",
+        "fileHash": "814b4b7d05e6334e290ac62820553f27fb3c41705f00358a801547bea58ebe476a4a4e9c8b25720241bf371c01b42639d4729c39332e1e07fe50e24e7263586d",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/patrick.canfield/Downloads/showposter"
+      }
+    ]
   }
 }

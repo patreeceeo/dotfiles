@@ -28,6 +28,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mfukar/robotframework-vim'
 Plug 'chrisbra/Colorizer'
 
+" Edit files as super user
+Plug 'lambdalisue/suda.vim'
+
 " Note: VimR 0.29 crashes because of coc.nvim
 " Note: Use `:CocInstall <name of language server>`
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

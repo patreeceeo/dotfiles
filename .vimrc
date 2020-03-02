@@ -25,6 +25,7 @@ Plug 'Quramy/tsuquyomi'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'wavded/vim-stylus'
 Plug 'mfukar/robotframework-vim'
+Plug 'lambdalisue/suda.vim'
 
 call plug#end()
 """ End: Configure Vim-Plug """
