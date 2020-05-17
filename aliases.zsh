@@ -15,7 +15,6 @@ function gvim () {
 _function vim
 
 _alias ll    'ls -lA'
-_alias cat   'ccat'
 
 _alias ga    'git add -A .'
 _alias gc    'git commit'
