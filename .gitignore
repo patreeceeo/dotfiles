@@ -6,3 +6,4 @@
 .config/hub
 .config/configstore
 .config/coc
+.config/configstore/update-notifier-npm.json
