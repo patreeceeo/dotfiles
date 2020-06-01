@@ -32,4 +32,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
+CJE_TOKEN="11aad1bf5ab9aa8f89f6de27754e330a23"
+export CJE_AUTH="patrick.canfield@rallyhealth.com:$CJE_TOKEN"
+export TENANT=prickly-car
 

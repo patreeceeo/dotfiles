@@ -4,15 +4,11 @@ function _alias() {
   alias $1=$2
 }
 
-function _function() {
-}
-
 _alias 'rc'    "source $HOME/.zshrc"
 
 function gvim () {
   nohup /Applications/VimR.app/Contents/MacOS/VimR $1 $2 $3 > /dev/null &
 }
-_function vim
 
 _alias ll    'ls -lA'
 
@@ -36,7 +32,10 @@ _alias git   'hub'
 function gimme_port () {
   kill -9 $(lsof -i :$1 -Fp | sed -E 's/.([0-9]+)/\1/')
 }
-_function gimme_port
+
+function gq () {
+  command git commit -m $1 --no-verify && gps1
+}
 
 
 function witch () {
@@ -52,7 +51,6 @@ function is_function () {
 function venv () {
   echo "$HOME/virtualenvs/$(basename $(pwd))"
 }
-_function venv
 
 function auto_activate_venv () {
   if [[ -a $(venv) ]]; then
@@ -106,7 +104,6 @@ function cd () {
   install_pre_commit_hooks
   do_git_stuff
 }
-_function cd
 
 _alias gps1 "git push --set-upstream origin HEAD"
 function gnf () {
@@ -116,7 +113,6 @@ function gnf () {
   git branch --edit-description
   git push --set-upstream origin HEAD
 }
-_function gnf
 
 
 # Show Git branch/tag, or name-rev if on detached head
