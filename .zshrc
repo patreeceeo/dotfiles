@@ -8,6 +8,16 @@ auto_activate_venv
 
 export PATH="$HOME/.yarn/bin:$PATH"
 
+if [ -d "$HOME/Library/Python/3.7/bin" ]; then
+  PATH="$HOME/Library/Python/3.7/bin:$PATH"
+fi
+
+if [ ! -d "$HOME/.zsh/zsh-autosuggestions" ]; then
+  mkdir $HOME/.zsh
+  git clone git@github.com:zsh-users/zsh-autosuggestions.git $HOME/.zsh/zsh-autosuggestions
+fi
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
@@ -27,9 +37,6 @@ load-nvmrc() {
     elif [ "$nvmrc_node_version" != "$node_version" ]; then
       nvm use
     fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
   fi
 }
 add-zsh-hook chpwd load-nvmrc
@@ -68,3 +75,5 @@ else
 fi
 
 export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
