@@ -1,4 +1,8 @@
 {
   "python.jediEnabled": false,
-  "tslint.autoFixOnSave": true
+  "tsserver.npm": "/usr/local/bin/npm",
+  "tsserver.enableJavascript": true,
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "jsx", "scala", "typescriptreact"],
+  "eslint.enable": false,
+  "tslint.enable": false
 }

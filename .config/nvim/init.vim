@@ -7,7 +7,6 @@ Plug 'patreeceeo/vim-colors-blueprint'
 Plug 'arzg/vim-oldbook8'
 " Some day, try Shougo/denite.nvim instead of ctrlp
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'elzr/vim-json'
 Plug 'tpope/vim-commentary'
 if match(&runtimepath, 'vim-commentary')
@@ -15,17 +14,22 @@ if match(&runtimepath, 'vim-commentary')
   vnoremap <Leader>\ :Commentary<CR>
 endif
 Plug 'tpope/vim-surround'
-Plug 'rhowardiv/nginx-vim-syntax'
 Plug 'tpope/vim-fugitive'
 if match(&runtimepath, 'vim-fugitive')
   " rhubarb depends on fugitive
   Plug 'tpope/vim-rhubarb'
 endif
-Plug 'leafgarland/typescript-vim'
+
+" Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 " The following syntax plugin doesn't get confused by
 " template tags like 'peitalin/vim-jsx-typescript'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'mfukar/robotframework-vim'
+Plug 'rhowardiv/nginx-vim-syntax'
+Plug 'elixir-editors/vim-elixir'
+
 Plug 'chrisbra/Colorizer'
 
 " Edit files as super user
@@ -35,8 +39,31 @@ Plug 'lambdalisue/suda.vim'
 " Note: Use `:CocInstall <name of language server>`
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 if match(&runtimepath, 'coc.nvim')
+  " Some servers have issues with backup files, see #649.
+  set nobackup
+  set nowritebackup
+
+  " Give more space for displaying messages.
+  set cmdheight=2
+
   " You will have bad experience for diagnostic messages when it's default 4000.
   set updatetime=300
+
+  " Don't pass messages to |ins-completion-menu|.
+  set shortmess+=c
+
+  " Always show the signcolumn, otherwise it would shift the text each time
+  " diagnostics appear/become resolved.
+  if has("patch-8.1.1564")
+    " Recently vim can merge signcolumn and number column into one
+    set signcolumn=number
+  else
+    set signcolumn=yes
+  endif
+
+  " Use tab for trigger completion with characters ahead and navigate.
+  " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+  " other plugin before putting this into your config.
   function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
@@ -51,6 +78,11 @@ if match(&runtimepath, 'coc.nvim')
 
   "Close preview window when completion is done.
   autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+  " Use `[g` and `]g` to navigate diagnostics
+  " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+  nmap <silent> [g <Plug>(coc-diagnostic-prev)
+  nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
   " Remap keys for gotos
   nmap <silent> gd <Plug>(coc-definition)
@@ -68,6 +100,9 @@ if match(&runtimepath, 'coc.nvim')
       call CocAction('doHover')
     endif
   endfunction
+
+  " Highlight the symbol and its references when holding the cursor.
+  autocmd CursorHold * silent call CocActionAsync('highlight')
 
   " Remap for rename current word
   nmap <leader>rn <Plug>(coc-rename)
@@ -105,23 +140,23 @@ if match(&runtimepath, 'ctrlp.vim')
   endif
 endif
 
-if match(&runtimepath, 'neomake')
-  let g:neomake_sbt_maker = {
-        \ 'exe': 'sbt',
-        \ 'args': ['-Dsbt.log.noformat=true', 'compile'],
-        \ 'append_file': 0,
-        \ 'auto_enabled': 1,
-        \ 'output_stream': 'stdout',
-        \ 'errorformat':
-            \ '%E[%trror]\ %f:%l:\ %m,' .
-              \ '%-Z[error]\ %p^,' .
-              \ '%-C%.%#,' .
-              \ '%-G%.%#'
-       \ }
-  let g:neomake_enabled_makers = ['sbt']
-  let g:neomake_verbose=3 " Neomake on text change
-  autocmd InsertLeave,TextChanged * update | Neomake! sbt
-endif
+" if match(&runtimepath, 'neomake')
+"   let g:neomake_sbt_maker = {
+"         \ 'exe': 'sbt',
+"         \ 'args': ['-Dsbt.log.noformat=true', 'compile'],
+"         \ 'append_file': 0,
+"         \ 'auto_enabled': 1,
+"         \ 'output_stream': 'stdout',
+"         \ 'errorformat':
+"             \ '%E[%trror]\ %f:%l:\ %m,' .
+"               \ '%-Z[error]\ %p^,' .
+"               \ '%-C%.%#,' .
+"               \ '%-G%.%#'
+"        \ }
+"   let g:neomake_enabled_makers = ['sbt']
+"   let g:neomake_verbose=3 " Neomake on text change
+"   autocmd InsertLeave,TextChanged * update | Neomake! sbt
+" endif
 
 set ts=2
 set sts=2
@@ -183,7 +218,7 @@ autocmd BufNewFile,BufRead *.md setlocal filetype=markdown spell
 autocmd BufNewFile,BufRead .eslintrc setlocal filetype=json
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
-autocmd BufWrite *.ts,*.tsx CocCommand prettier.formatFile
+autocmd BufWrite *.ts,*.tsx,*.ts,*.tsx CocCommand prettier.formatFile
 
 nnoremap <S-Left>      << 
 nnoremap <S-Right>     >>
