@@ -75,5 +75,5 @@ else
 fi
 
 export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
-
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+export EDITOR="nvim"
