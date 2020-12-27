@@ -77,3 +77,13 @@ fi
 export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 export EDITOR="nvim"
+
+### One version manager for many programming languages!
+. $HOME/.asdf/asdf.sh
+
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit
+compinit
+
