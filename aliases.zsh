@@ -11,9 +11,10 @@ function gvim () {
 }
 
 _alias ll    'ls -lA'
+_alias jest  'jest && echo "\e[1mDid you mean \e[37;41mnpm test\e[m?"'
 
 _alias ga    'git add -A .'
-_alias gc    'git commit'
+_alias gc    'git cz 2>/dev/null | git commit'
 _alias gco   'command git checkout'
 _alias gca   'git commit --amend'
 _alias gps   'git push'
