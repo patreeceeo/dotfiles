@@ -111,6 +111,21 @@ endif
 " For linting Scala
 Plug 'neomake/neomake'
 
+Plug 'SirVer/ultisnips'
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger='<c-bslash>'
+
+" shortcut to go to next position
+let g:UltiSnipsJumpForwardTrigger='<c-j>'
+
+" shortcut to go to previous position
+let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+
+Plug 'honza/vim-snippets'
+
 call plug#end()
 """ End: Configure Vim-Plug """
 
@@ -194,7 +209,7 @@ set titlestring=%M%t
 set noequalalways
 set shell=/bin/zsh
 " Neovim Python provider
-let g:python3_host_prog='/usr/local/bin/python3'
+" let g:python3_host_prog='/usr/local/bin/python3'
 " Automatically yank to system clipboard in addition to Vim clipboard
 set clipboard+=unnamedplus
 
@@ -218,7 +233,6 @@ autocmd BufNewFile,BufRead *.md setlocal filetype=markdown spell
 autocmd BufNewFile,BufRead .eslintrc setlocal filetype=json
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
-autocmd BufWrite *.ts,*.tsx,*.ts,*.tsx CocCommand prettier.formatFile
 
 nnoremap <S-Left>      << 
 nnoremap <S-Right>     >>
@@ -231,12 +245,15 @@ vnoremap <S-Tab>     <
 
 nmap <C-H>     :tabprevious<CR>
 nmap <C-L>     :tabnext<CR>
+nnoremap <C-T> :tabnew<CR>
 
 set foldmethod=indent
 set foldlevel=99
 
 " au WinLeave * set nocursorline nocursorcolumn
 nnoremap <Leader>l :set cursorline! cursorcolumn!<CR>
+
+nnoremap <Leader>f :CocCommand prettier.formatFile<CR>
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
