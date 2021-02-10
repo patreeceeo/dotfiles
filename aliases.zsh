@@ -28,7 +28,6 @@ _alias gs    'git status -v | less'
 _alias gb    'command git branch'
 _alias grm   'command git rm'
 _alias gr    'git remote -v'
-_alias git   'hub'
 
 
 function gimme_port () {

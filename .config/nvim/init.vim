@@ -7,7 +7,6 @@ Plug 'patreeceeo/vim-colors-blueprint'
 Plug 'arzg/vim-oldbook8'
 " Some day, try Shougo/denite.nvim instead of ctrlp
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'elzr/vim-json'
 Plug 'tpope/vim-commentary'
 if match(&runtimepath, 'vim-commentary')
   nnoremap <Leader>\ :Commentary<CR>
