@@ -66,3 +66,8 @@ autoload -Uz compinit
 compinit
 
 # source $HOME/.asdf/completions/asdf.bash
+
+function set_random_wallpaper () {
+  random_wallpaper=$(find ~/Pictures/Wallpapers -type f | shuf -n 1)
+  hsetroot -full $random_wallpaper
+}
