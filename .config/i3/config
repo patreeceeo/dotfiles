@@ -183,5 +183,3 @@ bar {
         status_command i3status
 }
 
-# Set desktop background
-hsetroot -center ~/Pictures/Wallpapers/jump-force-1.jpg
