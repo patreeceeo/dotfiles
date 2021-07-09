@@ -80,8 +80,8 @@ if match(&runtimepath, 'coc.nvim')
 
   " Use `[g` and `]g` to navigate diagnostics
   " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-  nmap <silent> [g <Plug>(coc-diagnostic-prev)
-  nmap <silent> ]g <Plug>(coc-diagnostic-next)
+  nmap <silent> ,g <Plug>(coc-diagnostic-prev)
+  nmap <silent> .g <Plug>(coc-diagnostic-next)
 
   " Remap keys for gotos
   nmap <silent> gd <Plug>(coc-definition)
@@ -104,7 +104,7 @@ if match(&runtimepath, 'coc.nvim')
   autocmd CursorHold * silent call CocActionAsync('highlight')
 
   " Remap for rename current word
-  nmap <leader>rn <Plug>(coc-rename)
+  nmap <leader>nn <Plug>(coc-rename)
 endif
 
 " For linting Scala
@@ -245,6 +245,7 @@ vnoremap <S-Tab>     <
 nmap <C-H>     :tabprevious<CR>
 nmap <C-L>     :tabnext<CR>
 nnoremap <C-T> :tabnew<CR>
+nnoremap <C-O> :w<CR>
 
 set foldmethod=indent
 set foldlevel=99
@@ -252,7 +253,7 @@ set foldlevel=99
 " au WinLeave * set nocursorline nocursorcolumn
 nnoremap <Leader>l :set cursorline! cursorcolumn!<CR>
 
-nnoremap <Leader>f :CocCommand prettier.formatFile<CR>
+nnoremap <Leader>; :CocCommand prettier.formatFile<CR>
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/

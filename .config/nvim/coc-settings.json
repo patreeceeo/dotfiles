@@ -2,7 +2,8 @@
   "python.jediEnabled": false,
   "tsserver.npm": "/usr/local/bin/npm",
   "tsserver.enableJavascript": true,
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "jsx", "scala", "typescriptreact"],
+  "coc.preferences.formatOnSaveFiletypes": [],
   "eslint.enable": false,
-  "tslint.enable": false
+  "tslint.enable": false,
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh"
 }

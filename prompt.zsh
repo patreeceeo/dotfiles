@@ -5,16 +5,9 @@ autoload -U colors && colors # Enable colors in prompt
 
 NODE_ICON=$'\uf898'
 
-node_bin_id() {
-  path=$(npm bin)
-  parts=($(echo $path | /usr/bin/sed 's/\// /g'))
-  length=${#a[@]}
-  echo $parts[-3]
-}
-
 node_prompt_string() {
   if which node &> /dev/null; then
-    echo "%{$fg_bold[green]%}$NODE_ICON $(node --version)($(node_bin_id))%{$reset_color%}"
+    echo "%{$fg_bold[green]%}$NODE_ICON $(node --version)%{$reset_color%}"
   fi
 }
 
@@ -42,6 +35,10 @@ function exit_code() {
   fi
 }
 
-PS1='$NEW_LINE$(exit_code) $(node_prompt_string) $(python_prompt_string) $NEW_LINE$CARET_RIGHT '
+function pwd_short() {
+  print -P %~
+}
+
+PS1='$NEW_LINE$(exit_code) $(node_prompt_string) $(python_prompt_string) $(pwd_short) $NEW_LINE$CARET_RIGHT '
 
 RPS1=''

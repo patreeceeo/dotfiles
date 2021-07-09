@@ -71,3 +71,4 @@ function set_random_wallpaper () {
   random_wallpaper=$(find ~/Pictures/Wallpapers -type f | shuf -n 1)
   hsetroot -full $random_wallpaper
 }
+export PATH=$PATH:$HOME/bin
