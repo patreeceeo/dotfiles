@@ -97,15 +97,6 @@ function do_git_stuff() {
   fi
 }
 
-function cd () {
-  remove_node_bin_from_path
-  builtin cd $1
-  auto_activate_pipenv
-  add_node_bin_to_path
-  install_pre_commit_hooks
-  do_git_stuff
-}
-
 _alias gps1 "git push --set-upstream origin HEAD"
 function gnf () {
   git checkout $1 # dev branch
