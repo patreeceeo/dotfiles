@@ -1,13 +1,13 @@
 [core]
-	editor = vim
+	editor = nvim
 	excludesFile = /Users/patrick.canfield/.gitignore_global
+
 [push]
 	default = simple
+
 [include]
   path = ~/gitconfig_machine_specific.inc
 
-[hub]
-	protocol = ssh
 [merge "npm-merge-driver"]
 	name = automatically merge npm lockfiles
 	driver = npx npm-merge-driver merge %A %O %B %P
