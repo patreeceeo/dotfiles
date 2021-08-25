@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #
 # Executes commands at the start of an interactive session.
 #
@@ -52,9 +59,6 @@ source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
 
-if [ -f "$HOME/prompt.zsh" ]; then
-  source "$HOME/prompt.zsh"
-fi
 
 if [ -f "$HOME/aliases.zsh" ]; then
   source "$HOME/aliases.zsh"
@@ -79,3 +83,9 @@ function set_random_wallpaper () {
 }
 export PATH=$PATH:$HOME/bin
 
+source ~/.zplug/init.zsh
+zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug load
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
