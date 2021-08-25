@@ -43,6 +43,7 @@ export PATH=$PATH:$HOME/bin
 
 source ~/.zplug/init.zsh
 zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug "jeffreytse/zsh-vi-mode"
 zplug load
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
