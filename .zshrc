@@ -11,6 +11,12 @@ export PATH="$HOME/.yarn/bin:$PATH"
 #   PATH="$HOME/Library/Python/3.7/bin:$PATH"
 # fi
 
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+HIST_SAVE_NO_DUPS=true
+setopt appendhistory
+
 if [ ! -d "$HOME/.zsh/zsh-autosuggestions" ]; then
   mkdir $HOME/.zsh
   git clone git@github.com:zsh-users/zsh-autosuggestions.git $HOME/.zsh/zsh-autosuggestions
@@ -72,3 +78,4 @@ function set_random_wallpaper () {
   hsetroot -full $random_wallpaper
 }
 export PATH=$PATH:$HOME/bin
+
