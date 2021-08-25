@@ -205,3 +205,8 @@ function workon() {
     git apply ~/Code/patches/pink-panther-use-zerocats.patch
   fi
 }
+
+function set_random_wallpaper () {
+  random_wallpaper=$(find ~/Pictures/Wallpapers -type f | shuf -n 1)
+  hsetroot -full $random_wallpaper
+}
