@@ -1,12 +1,10 @@
 {
   "dependencies": {
-    "coc-css": ">=1.2.3",
-    "coc-jest": ">=1.0.3",
-    "coc-json": ">=1.2.4",
-    "coc-metals": ">=0.8.3",
-    "coc-prettier": ">=1.1.11",
-    "coc-python": ">=1.2.6",
+    "coc-css": ">=1.2.6",
+    "coc-jest": ">=1.1.4",
+    "coc-prettier": ">=1.1.24",
+    "coc-python": ">=1.2.13",
     "coc-tslint": ">=1.0.17",
-    "coc-tsserver": ">=1.4.9"
+    "coc-tsserver": ">=1.8.6"
   }
 }

@@ -7,6 +7,7 @@ Plug 'patreeceeo/vim-colors-blueprint'
 Plug 'arzg/vim-oldbook8'
 " Some day, try Shougo/denite.nvim instead of ctrlp
 Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_custom_ignore='node_modules'
 Plug 'tpope/vim-commentary'
 if match(&runtimepath, 'vim-commentary')
   nnoremap <Leader>\ :Commentary<CR>
@@ -200,7 +201,7 @@ set nolist
 set ruler
 set nowrapscan
 set noswapfile
-set wildignore+=*.sw*,*.pyc,.git,target/*,tmp/*,dist/*,build/*,coverage/*
+set wildignore+=*.sw*,*.pyc,.git,target/*,tmp/*,dist/*,build/*,coverage/*,node_modules/*
 set iskeyword+=-
 set autoread
 set titlestring=%M%t
