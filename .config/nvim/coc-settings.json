@@ -1,9 +1,21 @@
 {
-  "python.jediEnabled": false,
+  "suggest.insertMode": "insert",
   "tsserver.npm": "/usr/local/bin/npm",
-  "tsserver.enableJavascript": true,
-  "coc.preferences.formatOnSaveFiletypes": [],
-  "eslint.enable": false,
+  "tsserver.log": "verbose",
+  "tsserver.enable": true,
   "tslint.enable": false,
-  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh"
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
+  "languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"]
+    },
+    "godot": {
+      "host": "127.0.0.1",
+      "filetypes": ["gdscript"],
+      "port": 6008
+    }
+  },
+  "snippets.ultisnips.pythonPrompt": false
 }
