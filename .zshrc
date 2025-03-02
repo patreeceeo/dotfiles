@@ -10,7 +10,6 @@ fi
 #
 
 
-export PATH="$HOME/.yarn/bin:$PATH"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -56,3 +55,26 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export RUST_BIN="/home/patrick/.asdf/installs/rust/1.72.0/bin"
+case ":$PATH:" in
+  *":$RUST_BIN:"*) ;;
+  *) export PATH="$RUST_BIN:$PATH" ;;
+esac
+
+# bun completions
+[ -s "/home/patrick/.bun/_bun" ] && source "/home/patrick/.bun/_bun"
+
+# yarn
+export PATH="$HOME/.yarn/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# python3
+export PYTHON_INSTALL="$HOME/.asdf/installs/python/3.10.4/bin"
+export PATH="$PYTHON_INSTALL:$PATH"
+
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

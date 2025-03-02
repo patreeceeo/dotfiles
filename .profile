@@ -26,4 +26,12 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/Smalltalk/GemStone_3.7.2" ] ; then
+    export GEMSTONE="$HOME/Smalltalk/GemStone_3.7.2"
+    export PATH="$GEMSTONE/bin:$PATH"
+fi
+
 export LD_LIBRARY_PATH=/usr/local/lib
+
+### One version manager for many programming languages!
+source "$HOME/.asdf/asdf.sh"

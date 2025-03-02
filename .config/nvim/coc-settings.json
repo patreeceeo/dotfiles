@@ -10,11 +10,6 @@
       "command": "elm-language-server",
       "filetypes": ["elm"],
       "rootPatterns": ["elm.json"]
-    },
-    "godot": {
-      "host": "127.0.0.1",
-      "filetypes": ["gdscript"],
-      "port": 6008
     }
   },
   "snippets.ultisnips.pythonPrompt": false

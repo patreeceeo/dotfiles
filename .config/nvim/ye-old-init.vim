@@ -3,6 +3,12 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'windwp/nvim-autopairs'
 Plug 'github/copilot.vim'
+
+" Copilot Chat
+Plug 'zbirenbaum/copilot.lua'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' }
+
 Plug 'vim-airline/vim-airline'
 Plug 'thaerkh/vim-indentguides'
 Plug 'morhetz/gruvbox'
@@ -33,24 +39,22 @@ Plug 'elixir-editors/vim-elixir'
 
 Plug 'chrisbra/Colorizer'
 
-" Edit files as super user
-Plug 'lambdalisue/suda.vim'
-
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-if match(&runtimepath, 'iamcco/markdown-preview.nvim')
-  function OpenMarkdownPreview (url)
-    echo a:url
-    execute "silent ! firefox --new-window " . a:url
-  endfunction
-  let g:mkdp_browserfunc = 'OpenMarkdownPreview'
-endif
-
-" " mainly for shellcheck
+" For shellcheck
 Plug 'dense-analysis/ale'
 let b:ale_linters = ['shellcheck']
-autocmd BufNewFile,BufRead *.ts ALEDisable
-" if match(&runtimepath, 'dense-analysis/ale')
-" endif
+autocmd BufNewFile,BufRead * ALEDisable
+autocmd BufNewFile,BufRead *.sh ALEEnable
+
+" Godot stuff
+Plug 'neovim/nvim-lspconfig'
+"A good completion plugin
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'habamax/vim-godot'
+let g:godot_executable = '/home/patrick/Godot/Godot_v4.3-stable_linux.x86_64'
+Plug 'mfussenegger/nvim-dap'
+" End of Godot stuff
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 if match(&runtimepath, 'coc.nvim')
@@ -140,31 +144,16 @@ endif
  " shortcut to go to previous position
  let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
-" Plug 'honza/vim-snippets'
 
-" Plug 'calviken/vim-gdscript3'
-Plug 'habamax/vim-godot'
-let g:godot_executable = '/home/patrick/Godot/Godot_v3.4.3-stable_mono_x11.64'
-
-Plug 'andys8/vim-elm-syntax'
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" let g:deoplete#enable_at_startup = 1
-" call deoplete#custom#option({
-"       \ 'auto_complete_delay': 100,
-"       \ 'keyword_patterns': {
-"         \ '_': '[\$a-zA-Z_]\k*',
-"       \}
-"       \ })
-
-" Plug 'neovim/nvim-lspconfig'
-
-" Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP client
-" Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
-" Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
-" Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
-" Plug 'L3MON4D3/LuaSnip' " Snippets plugin
+Plug 'airblade/vim-gitgutter'
+" Plug 'wuelnerdotexe/vim-astro'
+Plug 'rajasegar/vim-astro'
 call plug#end()
 """ End: Configure Vim-Plug """
+
+" Godot stuff
+set completeopt=menu,menuone,noselect
+" End of Godot stuff
 
 if match(&runtimepath, 'vim-airline')
   let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
@@ -246,7 +235,7 @@ set titlestring=%M%t
 set noequalalways
 set shell=/bin/zsh
 " Neovim Python provider
-let g:python3_host_prog='/usr/bin/python3.8'
+let g:python3_host_prog='/usr/bin/python3.10'
 " let g:python3_host_prog=system('asdf which python')
 " Automatically yank to system clipboard in addition to Vim clipboard
 set clipboard+=unnamedplus
@@ -266,7 +255,7 @@ cmap W! w !sudo tee % >/dev/null
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2,*.erb setlocal ft=xml
 autocmd BufNewFile,BufRead *Makefile,*.mk setlocal noexpandtab
 autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
-au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+au BufNewFile,BufRead *.py setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au FileType ruby setlocal iskeyword+=!
 au FileType ruby setlocal iskeyword+=?
 au FileType html,css setlocal iskeyword+=-
@@ -276,7 +265,7 @@ autocmd BufNewFile,BufRead *.md setlocal filetype=markdown spell
 autocmd BufNewFile,BufRead .eslintrc setlocal filetype=json
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
-autocmd BufNewFile,BufRead *.py,*.gd setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.gd setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.json setlocal conceallevel=0
 " dirty hack
 au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
@@ -316,11 +305,13 @@ autocmd BufWinLeave * call clearmatches()
 " Complete menu stuff
 " ===================
 
-set completeopt=longest,menuone
+" set completeopt=longest,menuone
 
 " Autoselect first item
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" ===================
+" End Complete menu stuff
 
 " Tell ctags to load from the current directory
 set tags=.ctags
